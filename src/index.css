@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card3d {
+    border: 0.3vh solid transparent;
+    border-image: linear-gradient(to right, indigo, fuchsia) 1;
+}
+
+  
