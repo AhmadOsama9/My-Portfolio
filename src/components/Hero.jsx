@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion, useAnimation } from "framer-motion";
 import ComputerCanvas from '../canvas/ComputerCanvas';
 import ArrowSection from './ArrowSection';
 
