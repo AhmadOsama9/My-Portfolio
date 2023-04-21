@@ -1,4 +1,3 @@
-// navigation
 export const navigation = [
   {
     name: "home",
@@ -18,26 +17,3 @@ export const navigation = [
   },
 ];
 
-// social
-export const social = [
-  {
-    //icon: ,
-    color: "text-red-500",
-    colorHover: "hover:text-red-900",
-  },
-  {
-    //icon: ,
-    color: "text-blue-500",
-    colorHover: "hover:text-blue-900",
-  },
-  {
-    //icon: ,
-    color: "text-white",
-    colorHover: "hover:text-gray-500",
-  },
-  {
-    //icon:,
-    color: "text-blue-500",
-    colorHover: "hover:text-blue-900",
-  },
-];
