@@ -82,84 +82,57 @@ const Contact = () => {
 
 
   return (
-    <div className="bg-primary">
-      <section id="contact" className="px-[4vw] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-        <div
-        className="flex-[0.75] bg-gray-700 text-gray-200 p-9 rounded-2xl">
-          <p className="text-2xl lg:text-3xl">Send Me Now</p>
-          <h1 className="text-3xl lg:text-3xl">Contact</h1>
-
-          <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
-          >
-            <label className="flex flex-col ">
-              <span
-              className="text-white font-medium mb-4">
-                Name
-              </span>
-              <input 
+    <section className="h-full bg-primary">
+    <div className="flex flex-row flex-wrap-reverse justify-center">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-gray-700 rounded-xl max-w-screen-xl w-full p-4 flex flex-col">
+        <p className="text-2xl lg:text-4xl">Send Me Now</p>
+        <h1 className="text-3xl lg:text-3xl">Contact</h1>
+        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-4">Name</span>
+            <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-white text-black py-4 px-6 placeholder:text-black  rounded-lg outlined-none border-none font-medium"
-              />
-
-            </label>
-            <label className="flex flex-col ">
-              <span
-              className="text-white font-medium mb-4">
-                Email
-              </span>
-              <input 
+              className="bg-white text-black py-4 px-6 placeholder:text-black rounded-lg outlined-none border-none font-medium"
+            />
+          </label>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-4">Email</span>
+            <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               placeholder="What's your email?"
               className="bg-white text-black py-4 px-6 placeholder:text-black rounded-lg outlined-none border-none font-medium"
-              />
-
-            </label>
-            <label className="flex flex-col ">
-              <span
-              className="text-white font-medium mb-4">
-                Message
-              </span>
-              <textarea
+            />
+          </label>
+          <label className="flex flex-col">
+            <span className="text-white font-medium mb-4">Message</span>
+            <textarea
               name="message"
               value={form.message}
               onChange={handleChange}
               placeholder="What's your message?"
-              className="bg-white text-black py-4 px-6 placeholder:text-black  rounded-lg outlined-none border-none font-medium"
-              />
-
-            </label>
-
-            <button 
+              className="bg-white text-black py-4 px-6 placeholder:text-black rounded-lg outlined-none border-none font-medium"
+            />
+          </label>
+          <button
             type="submit"
             className="bg-primary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-gray-700 rounded-xl"
-            >
-              {loading ? 'Sending...' : 'Send' }
-
-            </button>
-
-          </form>
-        </div>
-
-        <div
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350]"
-        >
-          <EarthCanvas />
-
-        </div>
-
-      </section>
-
+          >
+            {loading ? 'Sending...' : 'Send'}
+          </button>
+        </form>
+      </div>
+      <div>
+        <EarthCanvas />
+      </div>
     </div>
+  </section>
   )
 }
 

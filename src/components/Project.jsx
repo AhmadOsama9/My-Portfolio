@@ -14,7 +14,7 @@ const Project = () => {
             scale: 1,
             speed: 450,
           }}>
-            <div className="card3d bg-primary rounded mb-6 border-2">
+            <div className="bg-primary rounded mb-6 border-gray-700 border-2  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
                 <img src="../public/webpage1.png" alt="Summarized Image" />
                 <h3 className="text-2xl font-bold mb-4">Summarized</h3>
@@ -29,7 +29,7 @@ const Project = () => {
             scale: 1,
             speed: 450,
           }}>
-            <div className="card3d bg-primary rounded mb-6 border-2">
+            <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
                 <img src="../public/SimpleReactApps.png" alt="SimpleReactApps" />
                 <h3 className="text-2xl font-bold mb-4">Simple React Apps</h3>
@@ -44,7 +44,7 @@ const Project = () => {
             scale: 1,
             speed: 500,
           }}>
-            <div className="card3d bg-primary rounded mb-6 border-2">
+            <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
                 <img src="../public/WebGames_ver2.png" alt="WebGames"/>
                 <h3 className="text-2xl font-bold mb-4">Simple Vanilla JS</h3>
@@ -59,7 +59,7 @@ const Project = () => {
             scale: 1,
             speed: 500,
           }}>
-            <div className="card3d bg-primary rounded mb-6 border-2">
+            <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
                 <img src="../public/2D_Portfolio.png" alt="WebGames"/>
                 <h3 className="text-2xl font-bold mb-4">My 2D portfolio</h3>

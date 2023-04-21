@@ -15,14 +15,12 @@ const About = () => {
             scale: 1,
             speed: 450,
           }}>
-            <div className="card3d bg-gray-200 rounded mb-6">
+            <div className="card3d bg-gray-300 rounded mb-6 h-[200px] md:h-[300px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4">Front-End</h3>
-                <p className="text-gray-600">
-                  I've written a lot of websites, as you can see in My Project<br />
-                  have a little knowledge in Back-End<br />
-                  So I know a little about the backend.
-                  <br />I've also written Web Apps using React
+                <p className="text-gray-900 text-xl">
+                  I've written a lot of front-end projects.
+                  starts with vanilla css and js to react and tailwind
                 </p>
               </div>
             </div>
@@ -33,10 +31,10 @@ const About = () => {
             scale: 1,
             speed: 500,
           }}>
-            <div className="card3d bg-gray-200 rounded mb-6">
+            <div className="card3d bg-gray-300 rounded mb-6 h-[200px] md:h-[300px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4">Multi-Programming Languages</h3>
-                <p className="text-gray-600">
+                <p className="text-gray-900">
                   My main language is C++ and Java<br />
                   Also Write in PYTHON, HTML, CSS, JAVASCRIPT.
                 </p>
@@ -49,10 +47,10 @@ const About = () => {
             scale: 1,
             speed: 450,
           }}>
-            <div className="card3d bg-gray-200 rounded mb-6">
+            <div className="card3d bg-gray-300 rounded mb-6 h-[200px] md:h-[300px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4">Problem Solving</h3>
-                <p className="text-gray-600">I've solved more than 300 Questions on Leetcode</p>
+                <p className="text-gray-900">I've solved more than 300 Questions on Leetcode</p>
               </div>
             </div>
           </Tilt>
