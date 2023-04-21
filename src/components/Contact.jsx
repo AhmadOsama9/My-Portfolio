@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
 import EarthCanvas from "../canvas/EarthCanvas";
@@ -85,7 +84,7 @@ const Contact = () => {
   return (
     <div className="bg-primary">
       <section id="contact" className="px-[4vw] xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
-        <motion.div
+        <div
         className="flex-[0.75] bg-gray-700 text-gray-200 p-9 rounded-2xl">
           <p className="text-2xl lg:text-3xl">Send Me Now</p>
           <h1 className="text-3xl lg:text-3xl">Contact</h1>
@@ -149,7 +148,7 @@ const Contact = () => {
             </button>
 
           </form>
-        </motion.div>
+        </div>
 
         <div
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350]"

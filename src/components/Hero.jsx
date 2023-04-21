@@ -3,8 +3,6 @@ import ComputerCanvas from '../canvas/ComputerCanvas';
 import ArrowSection from './ArrowSection';
 
 const Hero = () => {
-  const animation = useAnimation();
-
   return (
       <section id="home" className="w-full h-screen bg-primary flex text-white">
         <div className="absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5
