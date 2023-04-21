@@ -13,7 +13,15 @@ const Navbar = () => {
     <nav className="flex justify-end">
       <div className="flex items-center lg:hidden">
         <button
-          className="block ml-auto border border-white p-2 rounded-md text-white font-medium hover:text-fuchsia-500 hover:border-fuchsia-500 bg-primary"
+          className={`block ml-auto border p-2 rounded-md text-white font-medium hover:text-fuchsia-500 
+          ${
+            isMenuOpen ? "border-fuchsia-500" : "border-white"
+          }
+          ${
+            isMenuOpen ? "text-fuchsia-500" : "border-white"
+          }
+          
+          bg-primary`}
           onClick={toggleMenu}
         >
           Menu
@@ -21,12 +29,12 @@ const Navbar = () => {
       </div>
 
       {isMenuOpen && (
-        <ul className="mt-4 absolute bg-primary top-12 right-0 cursor-pointer text-base font-medium rounded-md shadow-md overflow-hidden transition-all duration-300 z-10">
+        <ul className="absolute w-full bg-primary sm:top-20 top-16 right-0 cursor-pointer text-base font-medium rounded-md shadow-md overflow-hidden transition-all duration-300">
           {navigation.map((item, index) => (
-            <li className="mb-2 py-1" key={index}>
+            <li key={index}>
               <Link
                 to={item.href}
-                className="block px-4 py-2 text-white hover:text-fuchsia-500 transition-all duration-200"
+                className="block px-4 py-2 text-white hover:text-fuchsia-800 text-xl"
                 onClick={toggleMenu}
               >
                 {item.name}
