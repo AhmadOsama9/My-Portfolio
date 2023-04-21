@@ -85,7 +85,6 @@ const Contact = () => {
     <section className="h-full bg-primary">
     <div className="flex flex-row flex-wrap-reverse justify-center">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-gray-700 rounded-xl max-w-screen-xl w-full p-4 flex flex-col">
-        <p className="text-2xl lg:text-4xl">Send Me Now</p>
         <h1 className="text-3xl lg:text-3xl">Contact</h1>
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <label className="flex flex-col">
