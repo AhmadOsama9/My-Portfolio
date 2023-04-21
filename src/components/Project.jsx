@@ -19,7 +19,7 @@ const Project = () => {
               <div className="card3d-front p-6">
                 <img src={summarized} alt="Summarized Image" />
                 <h3 className="text-2xl font-bold mb-4">Summarized</h3>
-                <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla CSS, Vanilla JS</p>
+                <p className="text-gray-200 mb-4">Technologies: HTML, CSS, Vanilla JS</p>
                 <p className="text-gray-200 mb-4">Syntax Summary of some Languages</p>
                 <a href="https://ahmadosama9.github.io/summarized/HTML/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
               </div>
@@ -50,7 +50,7 @@ const Project = () => {
               <div className="card3d-front p-6">
                 <img src={WebGames} alt="WebGames"/>
                 <h3 className="text-2xl font-bold mb-4">Simple Vanilla JS</h3>
-                <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla JS, Vanilla CSS</p>
+                <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla JS, CSS</p>
                 <p className="text-gray-200 mb-4">Web Games</p>
                 <a href="https://ahmadosama9.github.io/WebGames/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
               </div>
