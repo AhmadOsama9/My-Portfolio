@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tilt } from 'react-tilt';
+import { summarized, WebGames, normalPortfolio, reactApps } from '../assets';
 
 const Project = () => {
   return (
@@ -16,7 +17,7 @@ const Project = () => {
           }}>
             <div className="bg-primary rounded mb-6 border-gray-700 border-2  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
-                <img src="./images/webpage1" alt="Summarized Image" />
+                <img src={summarized} alt="Summarized Image" />
                 <h3 className="text-2xl font-bold mb-4">Summarized</h3>
                 <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla CSS, Vanilla JS</p>
                 <p className="text-gray-200 mb-4">Syntax Summary of some Languages</p>
@@ -31,7 +32,8 @@ const Project = () => {
           }}>
             <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
-                <img src="./images/SimpleReactApps.png" alt="SimpleReactApps" />
+              <img src={reactApps} alt="Summarized Image" />
+                
                 <h3 className="text-2xl font-bold mb-4">Simple React Apps</h3>
                 <p className="text-gray-200 mb-4">Technologies: React, Pico CSS</p>
                 <p className="text-gray-200 mb-4"></p>
@@ -46,7 +48,7 @@ const Project = () => {
           }}>
             <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
-                <img src="./images/WebGames_ver2.png" alt="WebGames"/>
+                <img src={WebGames} alt="WebGames"/>
                 <h3 className="text-2xl font-bold mb-4">Simple Vanilla JS</h3>
                 <p className="text-gray-200 mb-4">Technologies: HMTL, Vanilla JS, Vanilla CSS</p>
                 <p className="text-gray-200 mb-4">Web Games</p>
@@ -61,7 +63,7 @@ const Project = () => {
           }}>
             <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
-                <img src="./images/2D_Portfolio.png" alt="WebGames"/>
+                <img src={normalPortfolio} alt="WebGames"/>
                 <h3 className="text-2xl font-bold mb-4">My 2D portfolio</h3>
                 <p className="text-gray-200 mb-4">Technologies: HMTL, Vanilla JS, Vanilla CSS</p>
                 <p className="text-gray-200 mb-4"></p>
