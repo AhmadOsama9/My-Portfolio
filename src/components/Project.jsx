@@ -32,7 +32,7 @@ const Project = () => {
           }}>
             <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
-              <img src={reactApps} alt="Summarized Image" />
+              <img src={reactApps} alt="Simple React Image" />
                 
                 <h3 className="text-2xl font-bold mb-4 text-gray-200">Simple React Apps</h3>
                 <p className="text-gray-200 mb-4">Technologies: React, Pico CSS</p>
@@ -63,8 +63,8 @@ const Project = () => {
           }}>
             <div className="bg-primary rounded mb-6 border-2 border-gray-700  h-[600px] md:h-[400px] lg:h-[500px]">
               <div className="card3d-front p-6">
-                <img src={normalPortfolio} alt="WebGames"/>
-                <h3 className="text-2xl font-bold mb-4 text-gray-200">My 2D portfolio</h3>
+                <img src={normalPortfolio} alt="Portfolio"/>
+                <h3 className="text-2xl font-bold mb-4 text-gray-200">My portfolio</h3>
                 <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla JS, CSS</p>
                 <p className="text-gray-200 mb-4">normal portfolio</p>
                 <a href="https://ahmadosama9.github.io/Portfolio/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
