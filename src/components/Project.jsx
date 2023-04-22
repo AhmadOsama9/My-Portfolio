@@ -65,7 +65,7 @@ const Project = () => {
               <div className="card3d-front p-6">
                 <img src={normalPortfolio} alt="WebGames"/>
                 <h3 className="text-2xl font-bold mb-4 text-gray-200">My 2D portfolio</h3>
-                <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla JS, Vanilla CSS</p>
+                <p className="text-gray-200 mb-4">Technologies: HTML, Vanilla JS, CSS</p>
                 <p className="text-gray-200 mb-4">normal portfolio</p>
                 <a href="https://ahmadosama9.github.io/Portfolio/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
               </div>
