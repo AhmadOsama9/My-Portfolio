@@ -127,7 +127,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className="sm:h-[250px] md:h-[300px]   ">
+      <div className="sm:h-[250px] md:h-[300px]">
         <EarthCanvas />
       </div>
     </div>

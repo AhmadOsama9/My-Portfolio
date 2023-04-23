@@ -1,46 +1,22 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { OrbitControls, Html, Preload } from "@react-three/drei";
+import { OrbitControls, Html, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader/CanvasLoader";
 
-  const Earth = ({isMobile, isTablet}) => {
-  const [model, setModel] = useState();
+const Earth = ({isMobile, isTablet}) => {
+  const earth = useGLTF("./planet/scene2.glb");
 
-  useEffect(() => {
-    const loader = new GLTFLoader();
-    loader.load(
-      "../planet/scene.gltf",
-      setModel,
-      undefined,
-      (error) => console.log(error)
-    );
-  }, []);
+  return(
+    <primitive 
+    object={earth.scene} 
+    scale={isMobile ? 3 : isTablet ? 4 : 5}
+     position-y={0} 
+     rotation-y={0} 
+     />
+  )
 
-  return model ? (
-    <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
-      <pointLight intensity={1} />
-      <spotLight
-        position={[-20, 50, 100]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <primitive
-        object={model.scene}
-        scale={isMobile ? 3 : isTablet ? 4 : 5}
-        rotation={[-0.01, -0.2, -0.1]}
-      />
-    </mesh>
-  ) : (
-    <Html>
-      <CanvasLoader />
-    </Html>
-  );
 }
 
 const EarthCanvas = () => {
@@ -80,7 +56,7 @@ const EarthCanvas = () => {
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
     >
-      <Suspense fallback={null}>
+      <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
