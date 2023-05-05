@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tilt } from 'react-tilt';
-import { summarized, WebGames, normalPortfolio, reactApps } from '../assets';
+import { summarized, WebGames, normalPortfolio, reactApps, coursesReact } from '../assets';
 
 const Project = () => {
   return (
@@ -10,21 +10,7 @@ const Project = () => {
           Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          <Tilt options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}>
-            <div className="bg-primary rounded mb-6 border-gray-700 border-2  h-[600px] md:h-[400px] lg:h-[500px]">
-              <div className="card3d-front p-6">
-                <img src={summarized} alt="Summarized Image" />
-                <h3 className="text-2xl font-bold mb-4 text-gray-200">Summarized</h3>
-                <p className="text-gray-200 mb-4">Technologies: HTML, CSS, Vanilla JS</p>
-                <p className="text-gray-200 mb-4">Syntax Summary of some Languages</p>
-                <a href="https://ahmadosama9.github.io/summarized/HTML/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
-              </div>
-            </div>
-          </Tilt>
+          
           <Tilt options={{
             max: 45,
             scale: 1,
@@ -71,6 +57,39 @@ const Project = () => {
               </div>
             </div>
           </Tilt>
+
+          <Tilt options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}>
+            <div className="bg-primary rounded mb-6 border-gray-700 border-2  h-[600px] md:h-[400px] lg:h-[500px]">
+              <div className="card3d-front p-6">
+                <img src={coursesReact} alt="Summarized Image" />
+                <h3 className="text-2xl font-bold mb-4 text-gray-200">My Courses</h3>
+                <p className="text-gray-200 mb-4">Technologies: React, CSS</p>
+                <p className="text-gray-200 mb-4">Shopping Cart App</p>
+                <a href="https://my-courses-react.onrender.com/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
+              </div>
+            </div>
+          </Tilt>
+
+          <Tilt options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}>
+            <div className="bg-primary rounded mb-6 border-gray-700 border-2  h-[600px] md:h-[400px] lg:h-[500px]">
+              <div className="card3d-front p-6">
+                <img src={summarized} alt="Summarized Image" />
+                <h3 className="text-2xl font-bold mb-4 text-gray-200">Summarized</h3>
+                <p className="text-gray-200 mb-4">Technologies: HTML, CSS, Vanilla JS</p>
+                <p className="text-gray-200 mb-4">Syntax Summary of some Languages</p>
+                <a href="https://ahmadosama9.github.io/summarized/HTML/" className="text-blue-600 hover:text-blue-800 font-semibold">See Project</a>
+              </div>
+            </div>
+          </Tilt>
+
         </div>
       </div>
     </section>
