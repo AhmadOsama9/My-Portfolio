@@ -7,15 +7,21 @@ import CanvasLoader from "../Loader/CanvasLoader";
 
 const Computer = ({isMobile, isTablet}) => {
 
-  const computer = useGLTF("./desktop_pc/scene2.glb");
+  const computer = useGLTF("./MyName.glb");
 
   return (
-    <mesh>
-      <hemisphereLight intensity={0.5} groundColor='black' />
+    <mesh
+      position={[-3, -1, 2]}
+      rotation={[Math.PI/ 2, 0 , -0.5]}
+    >
+      <hemisphereLight 
+        intensity={0.5} 
+        groundColor='black' 
+        />
       <spotLight
-        position={[-20, 50, 10]}
+        position={[10, 40, 10]}
         angle={0.12}
-        penumbra={1}
+        penumbra={1.5}
         intensity={1}
         castShadow
         shadow-mapSize={1024}
@@ -23,9 +29,8 @@ const Computer = ({isMobile, isTablet}) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.4 : isTablet ? 0.5: 0.75}
-        position={isMobile ? [0, -2, -1] : isTablet ? [0, -3.25, -1.5] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 0.7 : isTablet ? 1.3: 1.3}
+        position={isMobile ? [1, -2, 0] : isTablet ? [-1.3, -3.25, 0] : [-2, -3.25, 0]}
       />
     </mesh>
   );
