@@ -31,7 +31,6 @@ const About = () => {
 
   }, [aboutRef]);
 
-
   return (
     <section
       id="about"
@@ -43,53 +42,39 @@ const About = () => {
           About Me
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          <Tilt options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}>
-            <div className="card3d rounded mb-6 h-[200px] md:h-[300px]">
+          <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
+            <div className="card3d rounded mb-6 h-[250px] md:h-[400px] lg:h-[320px]">
               <div className="card3d-front p-6">
-                <h3 className="text-2xl font-bold mb-4"><span>Front-End</span></h3>
+                <h3 className="text-2xl font-bold mb-4"><span>Full-Stack Development</span></h3>
                 <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-                  <span>I've written</span><span> a lot of front-end projects.</span>
-                  <span>starts with vanilla css</span> <span>and js to react and tailwind.</span>
+                  <span>Experienced full-stack developer</span><span> with a passion for creating robust applications.</span>
+                  <span>Specializing in the MERN stack (MongoDB, Express.js, React, Node.js).</span>
                 </p>
               </div>
             </div>
           </Tilt>
       
-          <Tilt options={{
-            max: 45,
-            scale: 1,
-            speed: 500,
-          }}>
-            <div className="card3d rounded mb-6 h-[200px] md:h-[300px]">
+          <Tilt options={{ max: 45, scale: 1, speed: 500 }}>
+            <div className="card3d rounded mb-6 h-[250px] md:h-[400px] lg:h-[320px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4"><span>Multi-Programming</span> <span>Languages</span></h3>
                 <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-                  <span>My main language</span> <span>is C++ and Java</span><br />
-                  <span>Also Write in PYTHON</span><span>, JAVASCRIPT.</span>
+                  <span>Proficient in various programming languages</span><span> including C++, Java, Python, and JavaScript.</span>
                 </p>
               </div>
             </div>
           </Tilt>
 
-          <Tilt options={{
-            max: 45,
-            scale: 1,
-            speed: 450,
-          }}>
-            <div className="card3d rounded mb-6 h-[200px] md:h-[300px]">
+          <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
+            <div className="card3d rounded mb-6 h-[250px] md:h-[400px] lg:h-[320px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4"><span>Problem Solving</span></h3>
                 <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-                  <span>I've</span> <span>solved</span> <span>more than 300</span> <span>Questions on Leetcode.</span>
+                  <span>Dedicated problem solver</span><span> with a track record of solving over 300 problems on LeetCode.</span>
                 </p>
               </div>
             </div>
           </Tilt>
-
         </div>
       </div>
     </section>

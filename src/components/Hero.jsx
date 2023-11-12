@@ -21,7 +21,7 @@ const Hero = () => {
               Hello, I'm <span className="text-fuchsia-800"> Ahmed </span>
             </h1>
             <p className="mt-2">
-              A Computer Science Student
+              A MERN FullStack Developer
             </p>
           </div> 
         </div>
