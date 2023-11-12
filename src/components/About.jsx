@@ -1,12 +1,43 @@
-import React from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Tilt } from "react-tilt";
-
 
 import '../CSS/About.css';
 
+
 const About = () => {
+
+  const [isHovered, setIsHovered] = useState(false);
+  const aboutRef = useRef(null);
+
+  const handleIntersection = (entries) => {
+    const isInViewPort = entries[0].isIntersecting;
+
+    setIsHovered(isInViewPort);
+  }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      threshold: 0.2,
+    });
+
+    if (aboutRef.current) 
+      observer.observe(aboutRef.current);
+
+    return () => {
+      if (aboutRef.current) 
+        observer.unobserve(aboutRef.current);
+    }
+
+  }, [aboutRef]);
+
+
   return (
-    <section id="about" className="about section bg-primary h-full">
+    <section
+      id="about"
+      ref={aboutRef}
+      className={`about section bg-primary h-full ${isHovered ? 'hovered' : ''}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-200 tracking-tight sm:text-4xl mb-6">
           About Me
@@ -20,7 +51,7 @@ const About = () => {
             <div className="card3d rounded mb-6 h-[200px] md:h-[300px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4"><span>Front-End</span></h3>
-                <p className="text-gray-900 text-xl">
+                <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
                   <span>I've written</span><span> a lot of front-end projects.</span>
                   <span>starts with vanilla css</span> <span>and js to react and tailwind.</span>
                 </p>
@@ -36,7 +67,7 @@ const About = () => {
             <div className="card3d rounded mb-6 h-[200px] md:h-[300px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4"><span>Multi-Programming</span> <span>Languages</span></h3>
-                <p>
+                <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
                   <span>My main language</span> <span>is C++ and Java</span><br />
                   <span>Also Write in PYTHON</span><span>, JAVASCRIPT.</span>
                 </p>
@@ -52,7 +83,9 @@ const About = () => {
             <div className="card3d rounded mb-6 h-[200px] md:h-[300px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4"><span>Problem Solving</span></h3>
-                <p><span>I've</span> <span>solved</span> <span>more than 300</span> <span>Questions on Leetcode.</span></p>
+                <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
+                  <span>I've</span> <span>solved</span> <span>more than 300</span> <span>Questions on Leetcode.</span>
+                </p>
               </div>
             </div>
           </Tilt>

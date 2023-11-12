@@ -3,6 +3,7 @@ import reactApps from './SimpleReactApps.png';
 import WebGames from './WebGames_ver2.png';
 import normalPortfolio from './2D_Portfolio.png';
 import coursesReact from "./My_Courses_React.png";
+import socialMediaClone from "./socialMediaClone.png";
 
 
 export {
@@ -10,5 +11,6 @@ export {
     reactApps,
     WebGames,
     normalPortfolio,
-    coursesReact
+    coursesReact,
+    socialMediaClone,
 }
