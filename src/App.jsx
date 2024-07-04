@@ -3,21 +3,23 @@ import  Hero  from "./components/Hero";
 import  About  from "./components/About";
 import  Project  from "./components/Project";
 import  Contact  from "./components/Contact";
+import Footer from "./components/Footer";
 
 
 function App() {
 
   return (
-    <div className="App">
-     <h1 className=""> My 3D Portfolio </h1>
-     <Header />
-     <Hero />
-     <About />
-     <Project />
-     <Contact />
-
-    </div>
+    <>
+      <div className="">
+        <Header />
+        <Hero />
+        <About />
+        <Project />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   )
-}
+};
 
 export default App

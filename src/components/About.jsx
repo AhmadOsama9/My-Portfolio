@@ -32,13 +32,17 @@ const About = () => {
   }, [aboutRef]);
 
   return (
+<<<<<<< Updated upstream
     <section
       id="about"
       ref={aboutRef}
       className={`about section bg-primary h-full ${isHovered ? 'hovered' : ''}`}
     >
+=======
+    <section id="about" className="section bg-n-8 h-full">
+>>>>>>> Stashed changes
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-200 tracking-tight sm:text-4xl mb-6">
+        <h2 className="text-3xl font-extrabold text-n-1 tracking-tight sm:text-4xl mb-6">
           About Me
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">

@@ -82,7 +82,7 @@ const Contact = () => {
 
 
   return (
-    <section className="h-full bg-primary">
+    <section className="h-full bg-n-8 p-4">
     <div className="flex flex-row flex-wrap-reverse justify-center">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-gray-700 rounded-xl max-w-screen-xl w-full p-4 flex flex-col">
         <h1 className="text-3xl lg:text-3xl">Contact</h1>
