@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="relative w-16 h-16 sm:w-15 sm:h-15 ml-4 flex justify-center items-center ">
           <div className="absolute w-full h-full border-4 border-indigo-500 rounded-full animate-ping"></div>
           <div className="absolute w-full h-full border-4 border-indigo-500 rounded-full animate-pulse"></div>
-<<<<<<< Updated upstream
+
           <span className="text-fuchsia-700 text-2xl font-bold py-1 ">{"</>"}</span>
         </div>
 
@@ -32,10 +32,7 @@ const Hero = () => {
 
         <div className="absolute left-[50vw] bottom-0">
           <ArrowSection />
-=======
-          <span className="text-fuchsia-700 text-2xl font-bold py-1">{"</>"}</span>
->>>>>>> Stashed changes
-        </div>
+
 
         <div className="sm:text-3xl md:text-4xl xs:text-2xl ">
           <h1>

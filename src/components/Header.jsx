@@ -48,16 +48,6 @@ const Header = () => {
   }, []);
 
   return (
-<<<<<<< Updated upstream
-    <header className="h-20 flex bg-black item-center fixed top-0 w-full text-white z-10">
-      <div className="container mx-auto h-full grid grid-flow-col gap-8 items-center ">
-        <div className="text-white">
-        <h1 className="logo text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-tight text-gray-50"
-         content = "MY 3D Portfolio"
-        >
-          MY 3D Portfolio
-        </h1>
-=======
     <div className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm
         ${openNavigation ? 'bg-n-8' : 'bg-n-8/90 backdrop-blur-sm'}`}
     >
@@ -82,7 +72,7 @@ const Header = () => {
                     ))}
                 </div>
                 <HamburgerMenu />
->>>>>>> Stashed changes
+
 
             </nav>
 
