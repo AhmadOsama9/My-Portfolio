@@ -20,17 +20,17 @@ A visually engaging and dynamic 3D portfolio built with React and Three.js, desi
 
 🛠️ How to Run
 
-    Clone the repository:
+Clone the repository:
 
-git clone https://github.com/AhmadOsama9/3d-portfolio.git
+    git clone https://github.com/AhmadOsama9/3d-portfolio.git
 
 Navigate to the project directory:
 
-cd 3d-portfolio  
+    cd 3d-portfolio  
 
 Install dependencies:
 
-npm install  
+    npm install  
 
 Start the development server:
 
