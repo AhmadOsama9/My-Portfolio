@@ -56,20 +56,24 @@ const Header = () => {
                     <div className="flex items-center">
                     {/*Can add An Icon or image here */}
                       <h1 className=" xs:text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold text-white ml-2 lg:ml-4">
-                        Ahmed Osama
+                        MY 3D PORTFOLIO
                       </h1>
                     </div>
                 </a>
             <nav className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:max-auto lg:bg-transparent`}>
                 <div className="relative z-2 flex flex-col items-center justify-center m-auto gap-8 lg:flex-row">
-                    {navigation.map((item) => (
-                        <a key={item.id} href={item.url}
-                          className={`xs:text-xl  block relative font-code sm:text-2xl uppercase text-n-1 transition-colors hover:text-color-7`} 
-                            onClick={handleClick}
-                       >
-                            {item.title}
-                        </a>
-                    ))}
+                {navigation.map((item) => (
+                  <a
+                    key={item.id}
+                    href={item.url}
+                    target={item.isExternal ? "_blank" : "_self"}
+                    rel={item.isExternal ? "noopener noreferrer" : undefined}
+                    className="xs:text-xl block relative font-code sm:text-2xl uppercase text-n-1 transition-colors hover:text-color-7"
+                    onClick={item.isExternal ? null : handleClick}
+                  >
+                    {item.title}
+                  </a>
+                ))}
                 </div>
                 <HamburgerMenu />
 

@@ -1,39 +1,42 @@
 import React from 'react';
 import ComputerCanvas from '../canvas/ComputerCanvas';
 import ArrowSection from './helperComponents/ArrowSection';
+import { CodeBracketIcon } from '@heroicons/react/24/outline';
 
 const Hero = () => {
   return (
-    <section id="home" className="w-full h-screen bg-n-8 flex text-white">
-      <div className="absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 sm:text-2xl md:text-3xl lg:text-4xl">
+    <section id="home" className="w-full h-screen bg-n-8 flex text-white relative">
+      <div className="absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5 sm:text-2xl md:text-3xl lg:text-4xl px-4">
         
-        <div className="relative w-16 h-16 sm:w-15 sm:h-15 ml-4 flex justify-center items-center ">
-          <div className="absolute w-full h-full border-4 border-blue-500 rounded-full animate-ping"></div>
-          <div className="absolute w-full h-full border-4 border-blue-500 rounded-full animate-pulse"></div>
-
-          <span className="text-color-7  text-2xl font-bold py-1 ">{"</>"}</span>
+        {/* Icon Section */}
+        <div className="relative flex justify-center items-center">
+          <CodeBracketIcon className="w-16 h-16 text-color-7 animate-bounce" />
         </div>
 
-          <div className="sm:text-3xl md:text-4xl xs:text-xl">
-            <h1>
-              Hello, I'm <span className="text-color-7 font-bold "> Ahmed </span>
-            </h1>
-            <p className="mt-2">
-              A MERN FullStack Developer
-            </p>
-          </div> 
+        {/* Introduction */}
+        <div className="sm:text-3xl md:text-4xl xs:text-xl">
+          <h1 className="leading-snug">
+            I'm <span className="text-color-7 font-bold">Ahmed Osama</span>
+          </h1>
+          <p className="mt-2">
+            A <span className="text-color-7 font-bold">Full-Stack Developer</span> and  
+            <span className="text-color-7 font-bold"> Software Engineer</span> and
+            <span className="text-color-7 font-bold"> Computer Science Student</span> at Cairo University (2021-2025).
+          </p>
         </div>
+      </div>
 
-        <div className="w-full ">
-          <ComputerCanvas />
-        </div>
+      {/* 3D Canvas */}
+      <div className="w-full">
+        <ComputerCanvas />
+      </div>
 
-        
+      {/* Arrow Section */}
       <div className="absolute left-[50vw] bottom-0">
         <ArrowSection />
       </div>
     </section>
   );
-}
+};
 
 export default Hero;
