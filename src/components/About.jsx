@@ -63,7 +63,7 @@ const About = () => {
           
           {/* Full-Stack Web Development Card */}
           <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
-            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[320px]">
+            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[400px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4">Full-Stack Web Development</h3>
                 <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
@@ -78,7 +78,7 @@ const About = () => {
       
           {/* Efficient Problem Solving Card */}
           <Tilt options={{ max: 45, scale: 1, speed: 500 }}>
-            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[320px]">
+            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[400px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4">Efficient Problem Solving</h3>
                 <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
@@ -92,7 +92,7 @@ const About = () => {
 
           {/* Scalable Solutions Card */}
           <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
-            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[320px]">
+            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[400px]">
               <div className="card3d-front p-6">
                 <h3 className="text-2xl font-bold mb-4">Scalable & Optimized Solutions</h3>
                 <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
