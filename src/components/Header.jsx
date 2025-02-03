@@ -1,93 +1,116 @@
-import { useState, useEffect } from "react";
-import { disablePageScroll, enablePageScroll } from "scroll-lock";
-
+import { useWindowScroll } from "react-use";
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import { TiLocationArrow } from "react-icons/ti";
 import { navigation } from "../data";
-import { HamburgerMenu } from "./helperComponents/HamburgerMenu";
-import  MenuSvg  from "./helperComponents/svg/MenuSvg";
+import { FaCode, FaLinkedin } from 'react-icons/fa';
+import { X, Menu } from 'lucide-react';
+import { svg_3d } from "../assets";
 
-import '../CSS/logo.css';
+const NavBar = React.memo(() => {
+  const navContainerRef = useRef(null);
+  const [isOpen, setIsOpen] = useState(false); // Controls navigation links' visibility
+  const { y: currentScrollY } = useWindowScroll();
+  const [isNavVisible, setIsNavVisible] = useState(true); // Controls navbar's visibility
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-
-const Header = () => {
-  
-  const [openNavigation, setOpenNavigation] = useState(false);
-  const [isHeroSection, setIsHeroSection ] = useState(true);
-
-  const toggleNavigation = () => {
-    if(openNavigation) {
-        setOpenNavigation(false);
-        enablePageScroll();
-    }
-    else {
-        setOpenNavigation(true)
-        disablePageScroll();
-    }
-  }
-
-  const handleClick = () => {
-    if (!setOpenNavigation) return;
-    enablePageScroll();
-    setOpenNavigation(false);
-  }
-
+  // Debounced scroll handler to reduce re-renders
   useEffect(() => {
     const handleScroll = () => {
-      const heroSectionHeight = document.getElementById('hero').offsetHeight;
-      if (window.scrollY > heroSectionHeight) {
-        setIsHeroSection(false);
-      } else {
-        setIsHeroSection(true);
+      const scrollThreshold = 50;
+      if (currentScrollY > lastScrollY + scrollThreshold) {
+        setIsNavVisible(false); // Hide navbar on scroll down
+      } else if (currentScrollY < lastScrollY - scrollThreshold) {
+        setIsNavVisible(true); // Show navbar on scroll up
       }
+      setLastScrollY(currentScrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    const debouncedScroll = setTimeout(handleScroll, 100); // Debounce scroll event
+    return () => clearTimeout(debouncedScroll);
+  }, [currentScrollY, lastScrollY]);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+  // Memoized toggle function to avoid unnecessary re-renders
+  const toggleMenu = useCallback(() => {
+    setIsOpen((prev) => !prev); // Toggle navigation links' visibility
   }, []);
 
   return (
-    <div className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm
-        ${openNavigation ? 'bg-n-8' : 'bg-n-8/90 backdrop-blur-sm'}`}
+    <nav
+      ref={navContainerRef}
+      className={`
+        fixed top-0 left-0 w-full p-2 py-4 backdrop-blur-lg bg-primary-50/70 shadow-lg z-50 
+        transition-transform duration-300 ease-in-out 
+        ${isNavVisible ? "translate-y-0" : "-translate-y-full"}
+        border-b border-primary-200/20
+      `}
     >
-        <div className="flex items-center justify-between px-2 lg:px-3 xl:px-5 max-lg:py-4"> 
-                <a className="block xl:mr-8" href="#hero">
-                    <div className="flex items-center">
-                    {/*Can add An Icon or image here */}
-                      <h1 className=" xs:text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold text-white ml-2 lg:ml-4">
-                        MY 3D PORTFOLIO
-                      </h1>
-                    </div>
-                </a>
-            <nav className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:max-auto lg:bg-transparent`}>
-                <div className="relative z-2 flex flex-col items-center justify-center m-auto gap-8 lg:flex-row">
-                {navigation.map((item) => (
-                  <a
-                    key={item.id}
-                    href={item.url}
-                    target={item.isExternal ? "_blank" : "_self"}
-                    rel={item.isExternal ? "noopener noreferrer" : undefined}
-                    className="xs:text-xl block relative font-code sm:text-2xl uppercase text-n-1 transition-colors hover:text-color-7"
-                    onClick={item.isExternal ? null : handleClick}
-                  >
-                    {item.title}
-                  </a>
-                ))}
-                </div>
-                <HamburgerMenu />
+      <div className="flex justify-between items-center max-w-7xl mx-auto px-4">
+        {/* Logo Section */}
+        <a
+          href="#hero"
+          className="flex items-center gap-2"
+          onClick={() => setIsOpen(false)}
+        >
+          <div className="w-10 h-10 bg-primary-600 rounded-full flex items-center justify-center">
+            <img src={svg_3d} alt="3D Logo" className="" />   
+          </div>
+          <span className="text-neutral-600 font-bold text-xl">DevByAhmed</span>
+        </a>
 
+        <a href="https://www.linkedin.com/in/ahmedosama975/" className="md:block hidden" target="_blank" rel="noopener noreferrer">
+          <button>
+            <span className="bg-primary-200 text-neutral-600 px-4 py-2 rounded-md font-medium hover:bg-primary-400 hover:text-neutral-100 flex items-center">
+              <FaLinkedin className="mr-2" />
+              LinkedIn
+            </span>
+          </button>
+        </a>
 
-            </nav>
+        {/* Mobile Menu Toggle Button */}
+        <button
+          className="md:hidden text-primary-400 px-4 hover:bg-primary-100 rounded-md transition-colors"
+          onClick={toggleMenu}
+          aria-label="Toggle Navigation"
+        >
+          {isOpen ? (
+            <X 
+              className="w-6 h-6 text-primary-400 stroke-current" 
+              strokeWidth={2} 
+            />
+          ) : (
+            <Menu 
+              className="w-6 h-6 text-primary-400 stroke-current" 
+              strokeWidth={2} 
+            />
+          )}
+        </button>
+      </div>
 
-            <button className="ml-auto lg:hidden" px="px-3"
-              onClick={toggleNavigation}
-            >
-                <MenuSvg openNavigation={openNavigation}/>
-            </button>
-        </div>
-    </div>
+      {/* Navigation Links */}
+      <div 
+        className={`
+          flex flex-col md:flex-row justify-center items-center 
+          transition-all duration-300 ease-in-out overflow-hidden
+          ${isOpen ? 'opacity-100 max-h-screen mt-4' : 'opacity-0 max-h-0'}
+          md:opacity-100 md:max-h-full md:mt-0
+        `}
+      >
+        {navigation.map((item, index) => (
+          <a
+            key={index}
+            href={item.url}
+            className="
+              text-neutral-600 hover:text-primary-500 p-2 
+              transition-colors rounded-md font-medium
+            "
+            onClick={toggleMenu}
+          >
+            {item.title}
+          </a>
+        ))}
+      </div>
+    </nav>
   );
-};
+});
 
-export default Header;
+export default NavBar;

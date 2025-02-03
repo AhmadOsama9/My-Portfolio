@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128"
+   height="128"
+   viewBox="0 0 33.866666 33.866666"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="3D SVG.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     units="px"
+     inkscape:zoom="0.73139029"
+     inkscape:cx="127.15509"
+     inkscape:cy="244.05574"
+     inkscape:window-width="1130"
+     inkscape:window-height="993"
+     inkscape:window-x="0"
+     inkscape:window-y="49"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     width="124px">
+    <inkscape:grid
+       type="xygrid"
+       id="grid21437" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-86.207611"
+       y="100.5162"
+       id="text561"><tspan
+         sodipodi:role="line"
+         id="tspan559"
+         style="stroke-width:0.264583"
+         x="-86.207611"
+         y="100.5162" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24.3544px;line-height:1.25;font-family:sans-serif;word-spacing:0px;fill:#38a3a5;fill-opacity:1;stroke:#38a3a5;stroke-width:1.97998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="2.6942282"
+       y="19.32519"
+       id="text16285"
+       transform="scale(0.61159898,1.6350583)"><tspan
+         sodipodi:role="line"
+         id="tspan16283"
+         style="font-size:24.3544px;fill:#38a3a5;fill-opacity:1;stroke:#38a3a5;stroke-width:1.97998;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         x="2.6942282"
+         y="19.32519">DEV</tspan></text>
+  </g>
+</svg>

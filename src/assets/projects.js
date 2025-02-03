@@ -7,7 +7,7 @@ import {
 
 const projects = [
 {
-  title: 'Education Platform',
+  title: 'Education Platform FullStack',
   image: codingSensaiImage, 
   technologies: 'React, Node.js, Express.js, PostgreSQL, AWS',
   description: `
@@ -15,6 +15,7 @@ const projects = [
     assignments, and gamification to enhance user engagement and learning motivation.
   `,
   date: 'August 2024 - October 2024',
+  liveLink: "https://www.linkedin.com/in/ahmedosama975/details/projects/"
 },
 {
   title: 'Social Media Clone (Frontend)',
@@ -25,6 +26,7 @@ const projects = [
     real-time chat via WebSockets, and interactive community pages for seamless user experiences.
   `,
   date: 'July 2023 - September 2023',
+  liveLink: "https://www.linkedin.com/in/ahmedosama975/details/projects/"
 },
 {
   title: 'Social Media Clone (Backend)',
@@ -35,6 +37,7 @@ const projects = [
     data management for posts and comments, friend lists, notifications, and scalable RESTful APIs.
   `,
   date: 'July 2023 - September 2023',
+  liveLink: "https://www.linkedin.com/in/ahmedosama975/details/projects/"
 },
 {
   title: 'TikTok-like Backend',
@@ -45,6 +48,7 @@ const projects = [
     and real-time video recommendations for enhanced user engagement and scalability.
   `,
   date: 'January 2024 - March 2024',
+  liveLink: "https://www.linkedin.com/in/ahmedosama975/details/projects/"
 },
 ];
 

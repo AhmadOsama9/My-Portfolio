@@ -36,3 +36,12 @@ Start the development server:
 
     npm start  
 
+
+Things to be done:
+1) update whole website starting with nav
+2) make a favicon
+3) add meta description
+4) change the hero including the way the scroll work like making it more prominent
+5) add linkeding to the footer
+6) Rename it to not my 3d portfolio but something else
+7) Update my Resume to mention add my portfolio and maybe I will also add update my linkedin to add it

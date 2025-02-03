@@ -1,109 +1,151 @@
-import { useState, useEffect, useRef } from 'react';
-import { Tilt } from "react-tilt";
-import '../CSS/About.css';
+import React, { useState, useEffect } from 'react';
+import { Code, Cpu, Database, Cloud, Rocket, ChevronLeft, ChevronRight } from 'lucide-react'; // Icons for services
+import { motion, AnimatePresence } from 'framer-motion';
+import { useSwipeable } from 'react-swipeable';
 
 const About = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  const aboutRef = useRef(null);
+  const services = [
+    {
+      icon: <Code className="w-12 h-12 text-primary-400" />,
+      title: "Full-Stack Development",
+      description: "I build scalable web applications using modern frameworks like React, Node.js, and PostgreSQL.",
+      color: "from-primary-100 to-white",
+    },
+    {
+      icon: <Cpu className="w-12 h-12 text-accent-blue-400" />,
+      title: "Efficient Problem Solving",
+      description: "With over 300 LeetCode problems solved, I tackle complex challenges with optimized algorithms.",
+      color: "from-accent-blue-100 to-white",
+    },
+    {
+      icon: <Database className="w-12 h-12 text-accent-purple-400" />,
+      title: "Database Design",
+      description: "I design efficient database systems using PostgreSQL and MongoDB for seamless data management.",
+      color: "from-accent-purple-100 to-white",
+    },
+    {
+      icon: <Cloud className="w-12 h-12 text-accent-green-400" />,
+      title: "Cloud & DevOps",
+      description: "I deploy scalable solutions using AWS, Docker, and CI/CD pipelines for reliable performance.",
+      color: "from-accent-green-100 to-white",
+    },
+    {
+      icon: <Rocket className="w-12 h-12 text-accent-red-400" />,
+      title: "Rapid Prototyping",
+      description: "I deliver fast, high-quality prototypes to validate ideas and accelerate development.",
+      color: "from-accent-red-100 to-white",
+    },
+  ];
 
-  const handleIntersection = (entries) => {
-    const isInViewPort = entries[0].isIntersecting;
-    setIsHovered(isInViewPort);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const nextSlide = () => {
+    setActiveSlide((prev) => (prev + 1) % services.length);
   };
 
+  const prevSlide = () => {
+    setActiveSlide((prev) => (prev - 1 + services.length) % services.length);
+  };
+
+  // Auto-scroll logic
   useEffect(() => {
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null,
-      threshold: 0.2,
-    });
+    if (!isHovered) {
+      const interval = setInterval(() => {
+        nextSlide();
+      }, 5000); // Change slide every 5 seconds
+      return () => clearInterval(interval);
+    }
+  }, [isHovered]);
 
-    if (aboutRef.current) 
-      observer.observe(aboutRef.current);
-
-    return () => {
-      if (aboutRef.current) 
-        observer.unobserve(aboutRef.current);
-    };
-  }, [aboutRef]);
+  // Swipe handlers for mobile
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => nextSlide(),
+    onSwipedRight: () => prevSlide(),
+    trackMouse: true,
+  });
 
   return (
-    <section
-      id="about"
-      ref={aboutRef}
-      className={`about section bg-n-8 h-full ${isHovered ? 'hovered' : ''}`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-        <h2 className="text-3xl font-extrabold text-n-1 tracking-tight sm:text-4xl mb-6">
+    <section id="about" className="min-h-screen flex flex-col justify-center bg-neutral-900 py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Headline */}
+        <h2 className="text-4xl md:text-5xl font-bold text-neutral-100 text-center mb-6">
           About Me
         </h2>
-
-        <p className="text-gray-300 text-base leading-relaxed max-w-3xl text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-          I am a <span className="text-color-7 font-semibold">Full-Stack Developer</span> and 
-          <span className="text-color-7 font-semibold"> Software Engineer</span> specializing in web development. 
-          With expertise in multiple programming languages like 
-          <span className="text-blue-400 font-medium"> C++, Python, JavaScript, TypeScript,</span> and 
-          <span className="text-blue-400 font-medium"> Go</span>, I have built efficient, scalable, and innovative solutions 
-          using frameworks such as <span className="text-blue-400 font-medium">React, Node.js, Express.js, Nest.js, PostgreSQL,</span> and 
-          <span className="text-blue-400 font-medium"> MongoDB</span>. My focus is on creating seamless user experiences 
-          and solving complex problems efficiently for scalable web applications.
+        <p className="text-xl text-neutral-300 text-center max-w-2xl mx-auto mb-12">
+          I’m a Full-Stack Developer and Software Engineer specializing in building scalable, efficient, and user-friendly web applications.
         </p>
 
-        <p className="text-gray-300 text-base leading-relaxed max-w-3xl mt-4 text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-          I am committed to delivering high-quality, well-optimized solutions for modern web applications, ensuring that 
-          clients' needs are met with precision. My problem-solving skills, honed through competitive programming and real-world experience, 
-          help me tackle challenges efficiently, driving success for both clients and users.
-        </p>
+        {/* Carousel */}
+        <div
+          className="relative w-full h-[60vh] overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          {...swipeHandlers}
+        >
+          {/* Navigation Arrows - Hidden on mobile */}
+          <div className="absolute inset-y-0 left-0 hidden md:flex items-center justify-start pl-4 z-20">
+            <motion.button
+              className="bg-neutral-800/50 p-3 rounded-full shadow-lg hover:bg-neutral-800/80 transition-colors"
+              onClick={prevSlide}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ChevronLeft className="w-6 h-6 text-neutral-100" />
+            </motion.button>
+          </div>
+          <div className="absolute inset-y-0 right-0 hidden md:flex items-center justify-end pr-4 z-20">
+            <motion.button
+              className="bg-neutral-800/50 p-3 rounded-full shadow-lg hover:bg-neutral-800/80 transition-colors"
+              onClick={nextSlide}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ChevronRight className="w-6 h-6 text-neutral-100" />
+            </motion.button>
+          </div>
 
-        <p className="text-gray-300 text-base leading-relaxed max-w-3xl mt-4 text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-          You can view my resume <a href="https://drive.google.com/file/d/1YWmNin1ZNw2R1EzuZVuCbYDQ79IMoce5/view?usp=sharing" className="text-blue-400 underline" target="_blank">here</a>.
-        </p>
+          {/* Slides */}
+          <AnimatePresence mode="wait">
+            {services.map((service, index) => (
+              activeSlide === index && (
+                <motion.div
+                  key={index}
+                  className="absolute inset-0 flex flex-col items-center justify-center p-8"
+                  initial={{ opacity: 0, x: index > activeSlide ? 100 : -100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: index > activeSlide ? -100 : 100 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {/* Icon Circle */}
+                  <div className="w-24 h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-neutral-800 to-neutral-700 shadow-lg mb-8">
+                    {service.icon}
+                  </div>
 
+                  {/* Content */}
+                  <h3 className="text-3xl font-semibold text-neutral-100 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-lg text-neutral-300 text-center max-w-2xl">
+                    {service.description}
+                  </p>
+                </motion.div>
+              )
+            ))}
+          </AnimatePresence>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-6">
-          
-          {/* Full-Stack Web Development Card */}
-          <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
-            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[450px]">
-              <div className="card3d-front p-6">
-                <h3 className="text-2xl font-bold mb-4">Full-Stack Web Development</h3>
-                <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-                  I specialize in building complete web applications from front-end to back-end, 
-                  using technologies like <span className="text-blue-400">React, Node.js, Express,</span> and 
-                  <span className="text-blue-400"> PostgreSQL</span>. My goal is to create seamless, user-friendly experiences 
-                  with scalable back-end systems.
-                </p>
-              </div>
-            </div>
-          </Tilt>
-      
-          {/* Efficient Problem Solving Card */}
-          <Tilt options={{ max: 45, scale: 1, speed: 500 }}>
-            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[450px]">
-              <div className="card3d-front p-6">
-                <h3 className="text-2xl font-bold mb-4">Efficient Problem Solving</h3>
-                <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-                  Solving complex problems efficiently is my strength. With over 300 problems solved on 
-                  <span className="text-blue-400"> LeetCode</span> and experience in algorithm design, I apply 
-                  these skills to optimize solutions for web and back-end challenges.
-                </p>
-              </div>
-            </div>
-          </Tilt>
-
-          {/* Scalable Solutions Card */}
-          <Tilt options={{ max: 45, scale: 1, speed: 450 }}>
-            <div className="card3d rounded mb-6 h-[300px] md:h-[450px] lg:h-[450px]">
-              <div className="card3d-front p-6">
-                <h3 className="text-2xl font-bold mb-4">Scalable & Optimized Solutions</h3>
-                <p className="text-xl sm:text-sm md:text-lg lg:text-xl xl:text-2xl">
-                  My focus is on developing scalable solutions that meet business needs. I use modern tools and 
-                  frameworks to ensure both scalability and maintainability, whether it’s for cloud deployments 
-                  using <span className="text-blue-400">AWS</span> or containerization with <span className="text-blue-400">Docker</span>.
-                </p>
-              </div>
-            </div>
-          </Tilt>
-
+        {/* Navigation Dots */}
+        <div className="flex justify-center mt-8 space-x-4">
+          {services.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                activeSlide === index ? 'bg-primary-400' : 'bg-neutral-600'
+              }`}
+              onClick={() => setActiveSlide(index)}
+            />
+          ))}
         </div>
       </div>
     </section>

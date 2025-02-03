@@ -1,70 +1,56 @@
-import React, { useState } from 'react';
-import { navigation } from '../data';
-import { Link } from 'react-scroll';
+import React from 'react';
+import { navigation, socials } from '../data';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
-  };
-
   return (
-    <footer className="bg-n-8 text-white py-8">
-      <nav className="flex justify-center mb-4">
-        <ul className="flex space-x-8 capitalize text-lg font-medium">
-          {navigation.map((item, index) => (
-            <li
-              className="hover:text-fuchsia-500 cursor-pointer transition-all duration-200"
-              key={index}
-            >
-              <Link
-                to={item.href}
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                duration={400}
-                offset={-70}
-                className="transition-all duration-200"
-              >
-                {item.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div className="text-center">
-        <p className="text-sm mb-2">© {new Date().getFullYear()} Ahmed Osama</p>
-        <p className="text-sm mb-2">
-          <button onClick={toggleModal} className="underline">
-            Credits
-          </button>
-        </p>
-        <p className="text-sm">Contact me at: <a href="mailto:ahmedosama@example.com" className="underline">ahmedosamaa975@gmail.com</a></p>
-      </div>
+    <footer className="bg-white py-12 border-t border-neutral-200">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Section 2: Quick Links */}
+          <div className="text-center md:text-left">
+            <h4 className="text-lg font-semibold text-neutral-800 mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {navigation.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={item.url}
+                    className="text-sm text-neutral-500 hover:text-primary-500 transition-colors"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-          <div className="bg-white text-black p-6 rounded-lg relative">
-            <button onClick={toggleModal} className="absolute top-2 right-2 text-black">
-              &times;
-            </button>
-            <h2 className="text-lg font-bold mb-4">Credits</h2>
-            <ul className="list-disc pl-6">
+          {/* Section 3: Contact Information */}
+          <div className="text-center md:text-left">
+            <h4 className="text-lg font-semibold text-neutral-800 mb-4">Contact Me</h4>
+            <ul className="text-sm text-neutral-500 space-y-2">
+              <li>Email: <a href="mailto:ahmedosamaa975@gmail.com" className="text-primary-500 hover:underline">ahmedosamaa975@gmail.com</a></li>
+              <li>Phone: +20 1022-866-424</li>
+            </ul>
+          </div>
+
+          {/* Section 4: Social Media */}
+          <div className="text-center md:text-left">
+            <h4 className="text-lg font-semibold text-neutral-800 mb-4">Social Links</h4>
+            <ul className="flex justify-center md:justify-start space-x-4">
               <li>
-                <a href="https://sketchfab.com/3d-models/gaming-desktop-pc-blend-file-9468eae06d5e464eaebe3a7ea73ea7c7" className="underline">
-                  Gaming Desktop PC by Yolala1232
-                </a> licensed under <a href="http://creativecommons.org/licenses/by/4.0/" className="underline">CC-BY-4.0</a>
+                <a href="https://www.linkedin.com/in/ahmedosama975/" target="_blank" className="text-neutral-500 hover:text-primary-500 transition-colors">
+                  <FaLinkedin size={24} />
+                </a>
               </li>
               <li>
-                <a href="https://sketchfab.com/3d-models/stylized-planet-789725db86f547fc9163b00f302c3e70" className="underline">
-                  Stylized Planet by cmzw
-                </a> licensed under <a href="http://creativecommons.org/licenses/by/4.0/" className="underline">CC-BY-4.0</a>
+                <a href="https://github.com/AhmadOsama9" target="_blank" className="text-neutral-500 hover:text-primary-500 transition-colors">
+                  <FaGithub size={24} />
+                </a>
               </li>
             </ul>
           </div>
         </div>
-      )}
+      </div>
     </footer>
   );
 };
