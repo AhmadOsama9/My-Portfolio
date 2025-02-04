@@ -6,11 +6,6 @@ import {
     tiktokClone 
 } from "./assets/index";
 
-// update resume file on the drive and link it correctly
-// update code to be cleaner
-// make projects public on github
-// update readme
-
 export const navigation = [
   { id: "0", title: "Home", url: "#home" },
   { id: "1", title: "About", url: "#about" },

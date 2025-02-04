@@ -6,7 +6,7 @@ const ParticleBackground = ({
   id = "tsparticles", 
   className = "", 
   colors = ["#38A3A5", "#71C9CE", "#A6E3E9"], 
-  particleCount = 80 // Default particle count
+  particleCount = 30 // Reduced particle count
 }) => {
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
@@ -33,20 +33,13 @@ const ParticleBackground = ({
               value: "transparent",
             },
           },
-          fpsLimit: 60,
+          fpsLimit: 30, // Lower FPS limit
           interactivity: {
             events: {
               onHover: {
-                enable: true,
-                mode: "repulse",
+                enable: false, // Disable hover interactions
               },
               resize: true,
-            },
-            modes: {
-              repulse: {
-                distance: 100,
-                duration: 0.4,
-              },
             },
           },
           particles: {
@@ -54,20 +47,16 @@ const ParticleBackground = ({
               value: colors,
             },
             links: {
-              color: colors[0],
-              distance: 150,
-              enable: true,
-              opacity: 0.5,
-              width: 1,
+              enable: false, // Disable links
             },
             move: {
               direction: "none",
               enable: true,
               outModes: {
-                default: "bounce",
+                default: "out", // Simpler out mode
               },
               random: false,
-              speed: 2.5,
+              speed: 1.5, // Reduced speed
               straight: false,
             },
             number: {
@@ -79,6 +68,10 @@ const ParticleBackground = ({
             },
             opacity: {
               value: 0.5,
+              animation: {
+                enable: true,
+                speed: 1,
+              },
             },
             shape: {
               type: "circle",
