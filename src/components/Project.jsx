@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Code, Eye, Github, ArrowRight, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { projects } from '../assets/projects';
+import { projects } from '../data';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(projects[0]);

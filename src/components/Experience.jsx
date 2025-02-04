@@ -77,7 +77,7 @@ const experienceGroups = [
       { name: "AWS IAM", usage: "Managed access control for cloud resources." },
       { name: "Query Optimization", usage: "Improved database performance with optimized queries." },
     ],
-    parallaxSpeed: 20,
+    parallaxSpeed: 10,
   },
 ];
 

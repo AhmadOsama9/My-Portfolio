@@ -9,7 +9,7 @@ const Contact = () => (
           Feel free to reach out for collaborations or just a friendly hello!
         </p>
         <a
-          href="mailto:ahmedosamaa975@gmail.com"
+          href="mailto:ahmedosama.dev@outlook.com"
           className="bg-primary-400 text-neutral-900 px-6 py-3 rounded-full font-semibold hover:bg-primary-500 transition-colors"
         >
           Send an Email

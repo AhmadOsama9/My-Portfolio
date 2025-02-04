@@ -1,17 +1,16 @@
 import React, { Suspense, useState } from 'react';
-import { Code, Layers, Zap, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 const ParticleBackground = React.lazy(() => import('./helperComponents/ParticleBakcground'));
 import { programming } from '../assets';
 
-const Hero = () => {
+const Hero = React.memo(() => {
   const [activeIcon, setActiveIcon] = useState(null);
 
   return (
     <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden">
       {/* Particle Background */}
       <Suspense fallback={<div>Loading...</div>}>
-        <ParticleBackground id="hero-particles" particleCount={50} />
+        <ParticleBackground id="hero-particles" particleCount={30} />
       </Suspense>
 
       {/* Hero Content */}
@@ -22,6 +21,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          style={{ willChange: "transform, opacity" }}
         >
           <h1 className="text-5xl md:text-6xl font-bold text-neutral-100 mb-4">
             Turning <span className="text-primary-400">Vision</span> into <br />
@@ -39,6 +39,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
+            style={{ willChange: "transform, opacity" }}
           >
             <a href="#projects">
               <button>
@@ -63,6 +64,7 @@ const Hero = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
+          style={{ willChange: "transform, opacity" }}
         >
           <img
             src={programming}
@@ -74,6 +76,6 @@ const Hero = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Hero;

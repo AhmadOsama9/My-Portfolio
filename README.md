@@ -35,3 +35,5 @@ Install dependencies:
 Start the development server:
 
     npm start  
+
+Need to improve the performance

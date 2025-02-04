@@ -1,5 +1,5 @@
 import React from 'react';
-import { navigation, socials } from '../data';
+import { navigation } from '../data';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
@@ -28,7 +28,7 @@ const Footer = () => {
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-neutral-800 mb-4">Contact Me</h4>
             <ul className="text-sm text-neutral-500 space-y-2">
-              <li>Email: <a href="mailto:ahmedosamaa975@gmail.com" className="text-primary-500 hover:underline">ahmedosamaa975@gmail.com</a></li>
+              <li>Email: <a href="mailto:ahmedosamaa975@gmail.com" className="text-primary-500 hover:underline">ahmedosama.dev@outlook.com</a></li>
               <li>Phone: +20 1022-866-424</li>
             </ul>
           </div>
