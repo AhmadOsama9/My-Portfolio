@@ -59,7 +59,7 @@ const NavBar = React.memo(() => {
 
         <a href="https://www.linkedin.com/in/ahmedosama975/" className="md:block hidden" target="_blank" rel="noopener noreferrer">
           <button>
-            <span className="bg-primary-200 text-neutral-600 px-4 py-2 rounded-md font-medium hover:bg-primary-400 hover:text-neutral-100 flex items-center">
+            <span className="bg-primary-300 text-neutral-600 px-4 py-2 rounded-md font-medium hover:bg-primary-400 hover:text-neutral-100 flex items-center">
               <FaLinkedin className="mr-2" />
               LinkedIn
             </span>

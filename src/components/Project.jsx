@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Code, Eye, Github, ArrowRight, X } from 'lucide-react';
+import { Code, Eye, Github, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { projects } from '../data';
 
@@ -109,20 +109,20 @@ const Projects = () => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <a
-                      href={selectedProject.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-neutral-400 hover:text-neutral-100 transition-colors"
-                    >
-                      <Github className="w-6 h-6" />
-                    </a>
-                    <a
                       href={selectedProject.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-neutral-400 hover:text-neutral-100 transition-colors"
                     >
                       <Eye className="w-6 h-6" />
+                    </a>
+                    <a
+                      href={selectedProject.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-neutral-100 transition-colors"
+                    >
+                      <Github className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
@@ -188,6 +188,14 @@ const Projects = () => {
                       className="text-neutral-400 hover:text-neutral-100 transition-colors"
                     >
                       <Eye className="w-6 h-6" />
+                    </a>
+                    <a
+                      href={selectedProject.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neutral-400 hover:text-neutral-100 transition-colors"
+                    >
+                      <Github className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
