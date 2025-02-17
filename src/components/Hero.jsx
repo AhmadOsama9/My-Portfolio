@@ -10,7 +10,7 @@ const Hero = React.memo(() => {
     <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden">
       {/* Particle Background */}
       <Suspense fallback={<div>Loading...</div>}>
-        <ParticleBackground id="hero-particles" particleCount={30} />
+        <ParticleBackground id="hero-particles" particleCount={80} />
       </Suspense>
 
       {/* Hero Content */}

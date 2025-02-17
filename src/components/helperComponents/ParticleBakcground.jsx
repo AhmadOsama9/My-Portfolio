@@ -33,11 +33,12 @@ const ParticleBackground = ({
               value: "transparent",
             },
           },
-          fpsLimit: 30, // Lower FPS limit
+          fpsLimit: 60, // Lower FPS limit
           interactivity: {
             events: {
               onHover: {
-                enable: false, // Disable hover interactions
+                enable: true, // enable hover interactions
+                mode: "repulse", // repulse particles on hover
               },
               resize: true,
             },
@@ -47,7 +48,7 @@ const ParticleBackground = ({
               value: colors,
             },
             links: {
-              enable: false, // Disable links
+              enable: true, // enable links
             },
             move: {
               direction: "none",

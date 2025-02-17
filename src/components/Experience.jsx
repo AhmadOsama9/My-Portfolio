@@ -86,7 +86,7 @@ const Experience = () => {
     <section id="experience" className="relative py-24 min-h-screen bg-neutral-900">
       {/* Particle Background (Lazy Loaded) */}
       <Suspense fallback={<div className="loading-spinner">Loading...</div>}>
-        <ParticleBackground id="experience-particles" particleCount={30} />
+        <ParticleBackground id="experience-particles" particleCount={60} />
       </Suspense>
 
       {/* Section Content */}
