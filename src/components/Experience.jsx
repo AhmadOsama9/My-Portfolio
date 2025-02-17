@@ -15,7 +15,7 @@ const experienceGroups = [
       { name: "MongoDB", usage: "Implemented for flexible schema designs in the Social Media Clone." },
       { name: "MySQL", usage: "Utilized for structured data in smaller projects." },
     ],
-    parallaxSpeed: -10,
+    parallaxSpeed: 5,
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const experienceGroups = [
       { name: "GitHub Actions", usage: "Implemented CI/CD pipelines for automated deployments." },
       { name: "Nginx", usage: "Configured as a reverse proxy and load balancer for backend services." },
     ],
-    parallaxSpeed: 10,
+    parallaxSpeed: 20,
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ const experienceGroups = [
       { name: "NestJS", usage: "Implemented for modular and maintainable backend architectures." },
       { name: "Swagger", usage: "Integrated for API documentation and testing." },
     ],
-    parallaxSpeed: -20,
+    parallaxSpeed: 30,
   },
   {
     id: 4,
@@ -53,7 +53,7 @@ const experienceGroups = [
       { name: "Tailwind CSS", usage: "Used for styling and creating responsive designs." },
       { name: "TypeScript", usage: "Leveraged for type-safe development and improved code quality." },
     ],
-    parallaxSpeed: 15,
+    parallaxSpeed: 40,
   },
   {
     id: 5,
@@ -65,7 +65,7 @@ const experienceGroups = [
       { name: "CI/CD Pipelines", usage: "Automated build and deployment processes using GitHub Actions." },
       { name: "API Gateways", usage: "Configured Nginx as a reverse proxy for backend services." },
     ],
-    parallaxSpeed: -20,
+    parallaxSpeed: 50,
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ const experienceGroups = [
       { name: "AWS IAM", usage: "Managed access control for cloud resources." },
       { name: "Query Optimization", usage: "Improved database performance with optimized queries." },
     ],
-    parallaxSpeed: 10,
+    parallaxSpeed: 55,
   },
 ];
 
@@ -105,7 +105,7 @@ const Experience = () => {
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <Parallax speed={-10}>
-            <motion.div
+            <div
               className="text-center mb-16"
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -117,7 +117,7 @@ const Experience = () => {
               <p className="text-lg text-neutral-300 max-w-2xl mx-auto">
                 A showcase of the technologies I’ve worked with and how I’ve applied them in my projects.
               </p>
-            </motion.div>
+            </div>
           </Parallax>
 
           {/* Experience Cards */}
@@ -126,7 +126,7 @@ const Experience = () => {
               const Icon = group.icon;
               return (
                 <Parallax key={group.id} speed={group.parallaxSpeed}>
-                  <motion.div
+                  <div
                     className={`
                       relative p-8 md:p-12 rounded-3xl 
                       shadow-lg overflow-hidden
@@ -134,10 +134,7 @@ const Experience = () => {
                       bg-neutral-800/50 backdrop-blur-sm
                       mx-auto w-full max-w-2xl
                     `}
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    viewport={{ once: true, amount: 0.5 }}
+                  
                   >
                     {/* Icon Container */}
                     <div className="relative z-10 w-24 h-24 flex items-center justify-center rounded-full bg-white/20">
@@ -159,7 +156,7 @@ const Experience = () => {
                         ))}
                       </div>
                     </div>
-                  </motion.div>
+                  </div>
                 </Parallax>
               );
             })}
@@ -171,3 +168,4 @@ const Experience = () => {
 };
 
 export default Experience;
+
