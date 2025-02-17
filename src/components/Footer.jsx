@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-900 py-12 border-t border-neutral-800">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Section 2: Quick Links */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Section 1: Quick Links */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-neutral-100 mb-4">Quick Links</h4>
             <ul className="space-y-2">
@@ -24,24 +24,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Section 3: Contact Information */}
-          <div className="text-center md:text-left">
-            <h4 className="text-lg font-semibold text-neutral-100 mb-4">Contact Me</h4>
-            <ul className="text-sm text-neutral-400 space-y-2">
-              <li>
-                Email:{' '}
-                <a
-                  href="mailto:ahmedosamaa975@gmail.com"
-                  className="text-primary-500 hover:underline"
-                >
-                  ahmedosama.dev@outlook.com
-                </a>
-              </li>
-              <li>Phone: +20 1022-866-424</li>
-            </ul>
-          </div>
-
-          {/* Section 4: Social Media */}
+          {/* Section 2: Social Media */}
           <div className="text-center md:text-left">
             <h4 className="text-lg font-semibold text-neutral-100 mb-4">Social Links</h4>
             <ul className="flex justify-center md:justify-start space-x-4">
@@ -67,6 +50,25 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          {/* Section 3: Contact Information */}
+          <div className="text-center md:text-left">
+            <h4 className="text-lg font-semibold text-neutral-100 mb-4">Contact Me</h4>
+            <ul className="text-sm text-neutral-400 space-y-2">
+              <li>
+                Email:{' '}
+                <a
+                  href="mailto:ahmedosamaa975@gmail.com"
+                  className="text-primary-500 hover:underline"
+                >
+                  ahmedosama.dev@outlook.com
+                </a>
+              </li>
+              <li>Phone: +20 1022-866-424</li>
+            </ul>
+          </div>
+
+          
         </div>
 
         {/* Footer Bottom */}
