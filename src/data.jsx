@@ -21,11 +21,9 @@ export const projects = [
         title: 'Education Platform Frontend',
         image: codingSensaiImage,
         technologies: 'React, Tailwind CSS, OAuth (GitHub)',
-        description: `
-          The frontend of a comprehensive education platform offering tracks and courses. The interface includes 
-          interactive components like course management, milestones, quizzes, and gamification to increase user 
-          engagement. Built using React.js for dynamic, component-based interfaces and Tailwind CSS for utility-first styling.
-        `,
+        description: `A dynamic education platform featuring interactive course tracks, 
+        milestones, and gamification elements. Built with React.js 
+        and Tailwind CSS for a responsive, engaging user experience.`,
         date: 'August 2024 - October 2024',
         liveLink: "https://github.com/AhmadOsama9/coding-sensai-frontend",
         githubLink: "https://github.com/AhmadOsama9/coding-sensai-frontend"
@@ -34,11 +32,8 @@ export const projects = [
         title: 'Education Platform Backend',
         image: codingSensaiImage,
         technologies: 'Node.js, Express.js, PostgreSQL, AWS Lambda, GitHub OAuth',
-        description: `
-          The backend of the education platform handles API requests, user authentication via GitHub OAuth, 
-          and manages course, milestone, and progress data. Built with Node.js and Express.js, the backend uses 
-          PostgreSQL for data storage and AWS Lambda for a scalable, serverless architecture. 
-        `,
+        description: `Scalable education platform backend built with Node.js/Express.js and PostgreSQL. 
+        Features GitHub OAuth authentication and AWS Lambda integration for serverless architecture.`,
         date: 'August 2024 - October 2024',
         liveLink: "https://github.com/AhmadOsama9/coding-sensai-backend",
         githubLink: "https://github.com/AhmadOsama9/coding-sensai-backend"

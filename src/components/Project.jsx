@@ -212,3 +212,7 @@ const Projects = () => {
 };
 
 export default Projects;
+
+
+// here the card are not responsive and become bigger than the screen
+// for the small sizes for some cards
