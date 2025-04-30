@@ -4,38 +4,34 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSwipeable } from 'react-swipeable';
 
 const About = () => {
+
   const services = [
     {
       icon: <Code className="w-12 h-12 text-primary-400" />,
-      title: "Full-Stack Development",
-      description: "I build scalable web applications using modern frameworks like React, Node.js, and PostgreSQL.",
+      title: "Full-Stack Engineering",
+      description: "I build production-ready systems with React, Node.js, and PostgreSQL—delivering maintainable, high-performance code across the stack.",
       color: "from-primary-500/20 to-primary-500/5",
     },
     {
-      icon: <Cpu className="w-12 h-12 text-blue-400" />,
-      title: "Efficient Problem Solving",
-      description: "With over 300 LeetCode problems solved, I tackle complex challenges with optimized algorithms.",
-      color: "from-blue-500/20 to-blue-500/5",
-    },
-    {
       icon: <Database className="w-12 h-12 text-purple-400" />,
-      title: "Database Design",
-      description: "I design efficient database systems using PostgreSQL and MongoDB for seamless data management.",
+      title: "Working with Diverse Databases",
+      description: "I work with both relational and NoSQL databases—designing schemas, writing performant queries, and ensuring data integrity in real-world applications.",
       color: "from-purple-500/20 to-purple-500/5",
-    },
+    },    
     {
       icon: <Cloud className="w-12 h-12 text-green-400" />,
-      title: "Cloud & DevOps",
-      description: "I deploy scalable solutions using AWS, Docker, and CI/CD pipelines for reliable performance.",
+      title: "Cloud & Infrastructure",
+      description: "I deploy resilient, cloud-native apps using AWS, Docker, and Terraform—automating infra so devs can focus on delivery.",
       color: "from-green-500/20 to-green-500/5",
     },
     {
       icon: <Rocket className="w-12 h-12 text-red-400" />,
-      title: "Rapid Prototyping",
-      description: "I deliver fast, high-quality prototypes to validate ideas and accelerate development.",
+      title: "Rapid Execution",
+      description: "I move fast without breaking things—delivering functional prototypes that evolve cleanly into production systems.",
       color: "from-red-500/20 to-red-500/5",
     },
   ];
+  
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [isHovered, setIsHovered] = useState(false);

@@ -62,6 +62,17 @@ import codingSensaiBackend2 from "./assets/coding_sensai_backend/coding_sensai_b
 import codingSensaiBackend3 from "./assets/coding_sensai_backend/coding_sensai_backend_3.png";
 import codingSensaiBackend4 from "./assets/coding_sensai_backend/coding_sensai_backend4.png";
 
+import nexwe3_1 from "./assets/nexwe3/nexwe3_1.png";
+import nexwe3_2 from "./assets/nexwe3/nexwe3_2.png";
+import nexwe3_3 from "./assets/nexwe3/nexwe3_3.png";
+import nexwe3_4 from "./assets/nexwe3/nexwe3_4.png";
+import nexwe3_5 from "./assets/nexwe3/nexwe3_5.png";
+import nexwe3_6 from "./assets/nexwe3/nexwe3_6.png";
+import nexwe3_7 from "./assets/nexwe3/nexwe3_7.png";
+import nexwe3_8 from "./assets/nexwe3/nexwe3_8.png";
+import nexwe3_9 from "./assets/nexwe3/nexwe3_9.png";
+
+
 
 export const navigation = [
   { id: "0", title: "Home", url: "#home" },
@@ -114,6 +125,27 @@ export const projects = [
         Features GitHub OAuth authentication and AWS Lambda integration for serverless architecture.`,
         date: 'August 2024 - October 2024',
         githubLink: "https://github.com/AhmadOsama9/coding-sensai-backend"
+    },
+    {
+      title: 'NexWe3 Agency Website',
+      images: [
+          nexwe3_1,
+          nexwe3_2,
+          nexwe3_3,
+          nexwe3_4,
+          nexwe3_5,
+          nexwe3_6,
+          nexwe3_7,
+          nexwe3_8,
+          nexwe3_9
+      ],
+      technologies: 'React, Vite, Tailwind CSS, Framer Motion, CSS',
+      description: `A modern, interactive website for NexWe3, a digital solutions agency specializing in custom software development, 
+      UI/UX design, and cloud infrastructure. Features include smooth animations with Framer Motion, responsive design, 
+      interactive service cards, and detailed case studies showcasing the agency's technical expertise and client success stories.
+      The site demonstrates both aesthetic design principles and technical implementation capabilities.`,
+      date: 'November 2024 - December 2024',
+      githubLink: "https://github.com/AhmadOsama9/nexwe3-agency-website"
     },
     {
         title: 'TikTok-like Backend',

@@ -42,7 +42,7 @@ const Hero = React.memo(() => {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            Full-Stack Developer
+            Full-Stack & Cloud Engineer
           </motion.p>
           
           {/* Main Heading */}
@@ -51,14 +51,10 @@ const Hero = React.memo(() => {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            Turning <span className="text-primary-400 relative">
-              Vision
-              {/* <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary-400/30 rounded-full"></span> */}
-            </span> into <br />
-            <span className="text-primary-400 relative inline-block">
-              Digital Innovation
-              <span className="absolute -bottom-2 left-0 w-full h-1 bg-primary-400/30 rounded-full"></span>
-            </span>
+            Building Scalable Systems from
+            <span className="text-primary-400 relative"> Vision</span> to
+            <br />
+            <span className="text-primary-400 relative inline-block">Execution</span>
           </motion.h1>
           
           {/* Description */}
@@ -67,9 +63,7 @@ const Hero = React.memo(() => {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            I transform ideas into reality as a <span className="text-primary-400 font-semibold">Full-Stack Developer</span> and{' '}
-            <span className="text-primary-400 font-semibold">Software Engineer</span>, building scalable,
-            efficient solutions with modern technologies.
+            I’m a software engineer with a full-stack foundation and a backend-first mindset. I build reliable cloud-native applications using modern frameworks and AWS infrastructure.
           </motion.p>
           
           {/* CTA Buttons */}
