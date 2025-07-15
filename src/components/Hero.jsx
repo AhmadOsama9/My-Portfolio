@@ -153,21 +153,21 @@ const Hero = React.memo(() => {
           
           {/* Stats */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-6 max-w-xs sm:max-w-lg mx-auto lg:mx-0"
+            className="grid grid-cols-3 gap-2 sm:gap-4 pt-3 sm:pt-6 max-w-xs sm:max-w-lg mx-auto lg:mx-0"
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-neutral-800/50 p-2 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group">
-                <p className="text-primary-400 text-lg sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">3+</p>
-                <p className="text-neutral-400 text-xs sm:text-sm">Years Coding</p>
+            <div className="bg-neutral-800/50 p-1.5 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group flex flex-col items-center">
+                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">3+</p>
+                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Years Coding</p>
               </div>
-              <div className="bg-neutral-800/50 p-2 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group">
-                <p className="text-primary-400 text-lg sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">7+</p>
-                <p className="text-neutral-400 text-xs sm:text-sm">Projects Built</p>
+              <div className="bg-neutral-800/50 p-1.5 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group flex flex-col items-center">
+                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">7+</p>
+                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Projects Built</p>
               </div>
-              <div className="bg-neutral-800/50 p-2 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group col-span-2 md:col-span-1">
-                <p className="text-primary-400 text-lg sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">10+</p>
-                <p className="text-neutral-400 text-xs sm:text-sm">Technologies</p>
+              <div className="bg-neutral-800/50 p-1.5 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group flex flex-col items-center">
+                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">10+</p>
+                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Technologies</p>
               </div>
           </motion.div>
         </motion.div>

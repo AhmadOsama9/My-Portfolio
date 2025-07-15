@@ -67,16 +67,20 @@ const About = () => {
   // Animation variants
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 500 : -500,
+      rotateY: direction > 0 ? 90 : -90,
       opacity: 0,
+      zIndex: 0,
     }),
     center: {
-      x: 0,
+      rotateY: 0,
       opacity: 1,
+      zIndex: 1,
+      transition: { type: 'spring', stiffness: 300, damping: 30 }
     },
     exit: (direction) => ({
-      x: direction < 0 ? 500 : -500,
+      rotateY: direction < 0 ? 90 : -90,
       opacity: 0,
+      zIndex: 0,
     }),
   };
 
@@ -136,10 +140,13 @@ const About = () => {
                 <motion.div
                   key={index}
                   className={`absolute inset-0 flex flex-col items-center justify-center p-12 bg-neutral-800/70 rounded-3xl shadow-2xl border border-primary-400/10 backdrop-blur-2xl transition-all duration-500 animate-fade-in hover:shadow-primary-400/10 hover:scale-[1.025]`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                  custom={activeSlide}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.6, ease: 'easeInOut' }}
+                  style={{ perspective: 1200 }}
                 >
                   {/* Icon Circle with Glass Effect */}
                   <div className="w-24 h-24 flex items-center justify-center rounded-full bg-gradient-to-br from-neutral-900/80 to-neutral-800/80 shadow-lg mb-8 backdrop-blur-md border border-neutral-700/50 transform transition-all duration-300 hover:scale-105">

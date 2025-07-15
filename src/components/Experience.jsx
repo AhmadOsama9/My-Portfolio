@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { useState } from 'react';
 import { Database, Cloud, Cpu, Code, Settings, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -94,6 +94,10 @@ const techItemVariants = {
 };
 
 const Experience = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+  const handleToggle = (idx) => {
+    setOpenIndex(openIndex === idx ? null : idx);
+  };
   return (
     <section id="experience" className="relative py-24 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950">
       {/* Particle Background (Lazy Loaded) */}
@@ -125,89 +129,46 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        {/* Experience Cards with Animations */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          {experienceGroups.map((group) => (
-            <motion.div
+        {/* Accordion/Expandable Cards */}
+        <div className="max-w-2xl mx-auto space-y-6">
+          {experienceGroups.map((group, idx) => (
+            <div
               key={group.id}
-              className={`relative p-8 rounded-xl backdrop-blur-sm bg-gradient-to-br ${group.color} 
-                border border-white/10 shadow-xl overflow-hidden group transition-all duration-500 hover:shadow-2xl
-                hover:border-opacity-30 hover:border-primary-500/30`}
-              variants={itemVariants}
-              whileHover={{ 
-                y: -5,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
-              }}
+              className={`rounded-xl border border-neutral-700 bg-neutral-900 shadow-md transition-all duration-300 ${openIndex === idx ? 'ring-2 ring-primary-400' : ''}`}
             >
-              {/* Background Glow Effect */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-gradient-to-br from-white/5 to-transparent 
-                opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              {/* Icon Container */}
-              <div className={`relative z-10 w-20 h-20 flex items-center justify-center rounded-2xl 
-                ${group.iconBg} shadow-lg mb-6 border border-white/10 group-hover:scale-110 
-                transition-transform duration-500 group-hover:border-white/20`}>
-                <motion.div
-                  animate={{ 
-                    rotate: [0, 5, 0, -5, 0],
-                    scale: [1, 1.05, 1, 1.05, 1] 
-                  }}
-                  transition={{ 
-                    duration: 6,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "reverse"
-                  }}
-                >
-                  {group.icon}
-                </motion.div>
+              <button
+                className="w-full flex items-center justify-between px-6 py-5 focus:outline-none"
+                onClick={() => handleToggle(idx)}
+                aria-expanded={openIndex === idx}
+                aria-controls={`exp-panel-${group.id}`}
+              >
+                <div className="flex items-center gap-4">
+                  <span className={`flex items-center justify-center w-10 h-10 rounded-lg ${group.iconBg}`}>{group.icon}</span>
+                  <span className="text-lg sm:text-xl md:text-2xl font-bold text-white">{group.title}</span>
+                </div>
+                <svg className={`w-5 h-5 text-primary-400 transform transition-transform duration-300 ${openIndex === idx ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </button>
+              <div
+                id={`exp-panel-${group.id}`}
+                className={`px-6 overflow-hidden transition-all duration-300 ${openIndex === idx ? 'max-h-[500px] py-4' : 'max-h-0 py-0'}`}
+                style={{ transitionProperty: 'max-height, padding' }}
+              >
+                {openIndex === idx && (
+                  <>
+                    <p className="text-neutral-300 text-base mb-4">{group.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {group.technologies.map((tech, i) => (
+                        <span key={i} className="px-2 py-1 bg-neutral-800 text-xs text-primary-300 rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
-
-              {/* Title & Description */}
-              <div className="relative z-10">
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white group-hover:text-primary-400 transition-colors duration-300">
-                  {group.title}
-                </h3>
-                <p className="text-base sm:text-lg md:text-xl text-neutral-300 mb-6 leading-relaxed">{group.description}</p>
-
-                {/* Technologies List */}
-                <motion.div 
-                  className="space-y-4"
-                  variants={{
-                    hidden: { opacity: 0 },
-                    visible: {
-                      opacity: 1,
-                      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
-                    }
-                  }}
-                >
-                  {group.technologies.map((tech, i) => (
-                    <motion.div 
-                      key={i} 
-                      className={`border-l-2 ${group.accent} pl-4 py-1 bg-black/10 rounded-r-md backdrop-blur-sm
-                        hover:bg-black/20 transition-all duration-300 hover:pl-5`}
-                      variants={techItemVariants}
-                    >
-                      <p className="font-medium text-white">{tech}</p>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-
-              {/* Decorative Corner */}
-              <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-gradient-to-br from-primary-500/20 to-transparent 
-                rounded-tl-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
         
         {/* Summary Section */}
         <motion.div

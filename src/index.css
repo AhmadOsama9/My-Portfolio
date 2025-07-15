@@ -14,17 +14,22 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #6366f1;
+    background: linear-gradient(135deg, #38bdf8 0%, #6366f1 60%, #818cf8 100%);
     border-radius: 10px;
     transition: all 0.3s ease;
+    border: 2px solid #1e1e2e;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #818cf8;
+    background: linear-gradient(135deg, #6366f1 0%, #38bdf8 100%);
   }
   
   /* For Firefox */
   * {
     scrollbar-width: thin;
-    scrollbar-color: #6366f1 #1e1e2e;
+    scrollbar-color: #38bdf8 #1e1e2e;
   }
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
