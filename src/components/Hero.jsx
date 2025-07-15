@@ -51,7 +51,7 @@ const Hero = React.memo(() => {
   };
 
   return (
-    <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden pt-10 sm:pt-16 md:pt-24 pb-4 sm:pb-8 md:pb-12">
+    <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden pt-6 sm:pt-12 md:pt-24 pb-2 sm:pb-8 md:pb-12">
       {/* Add syntax highlighting styles */}
       <style jsx global>{`
         .code-comment { color: #6b7280; }
@@ -87,10 +87,10 @@ const Hero = React.memo(() => {
       </Suspense>
 
       {/* Hero Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-screen flex flex-col lg:flex-row items-center justify-center text-center lg:text-left relative z-10">
+      <div className="container mx-auto px-2 sm:px-6 lg:px-8 h-screen flex flex-col lg:flex-row items-center justify-center text-center lg:text-left relative z-10">
         {/* Text Content */}
         <motion.div
-          className="space-y-8 lg:w-1/2 mt-[-2rem]"
+          className="space-y-6 sm:space-y-8 lg:w-1/2 mt-[-1rem] sm:mt-[-2rem]"
           initial="hidden"
           animate="visible"
           variants={{
@@ -104,7 +104,7 @@ const Hero = React.memo(() => {
         >
           {/* Pre-heading */}
           <motion.p 
-            className="text-primary-400 font-medium tracking-wider text-lg uppercase"
+            className="text-primary-400 font-medium tracking-wider text-base sm:text-lg uppercase mb-2 sm:mb-3"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
@@ -134,18 +134,18 @@ const Hero = React.memo(() => {
           
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-4"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center lg:justify-start pt-2 sm:pt-4"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
             <a href="#projects" className="group">
-              <button className="bg-primary-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 hover:bg-primary-600 hover:shadow-primary-500/20 hover:shadow-xl">
+              <button className="bg-primary-500 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg shadow-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 hover:bg-primary-600 hover:shadow-primary-500/20 hover:shadow-xl text-sm sm:text-base">
                 <span className="mr-2">View Projects</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </a>
             <a href="#contact">
-              <button className="bg-transparent border-2 border-primary-500 text-primary-500 px-6 py-3 rounded-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 hover:bg-primary-500/10">
+              <button className="bg-transparent border-2 border-primary-500 text-primary-500 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 hover:bg-primary-500/10 text-sm sm:text-base">
                 <span>Contact Me</span>
               </button>
             </a>
@@ -153,21 +153,21 @@ const Hero = React.memo(() => {
           
           {/* Stats */}
           <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-6 max-w-lg mx-auto lg:mx-0"
+            className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-3 sm:pt-6 max-w-xs sm:max-w-lg mx-auto lg:mx-0"
             variants={fadeInUp}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="bg-neutral-800/50 p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group">
-                <p className="text-primary-400 text-2xl font-bold group-hover:scale-110 transition-transform duration-300">3+</p>
-                <p className="text-neutral-400 text-sm">Years Coding</p>
+            <div className="bg-neutral-800/50 p-2 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group">
+                <p className="text-primary-400 text-lg sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">3+</p>
+                <p className="text-neutral-400 text-xs sm:text-sm">Years Coding</p>
               </div>
-              <div className="bg-neutral-800/50 p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group">
-                <p className="text-primary-400 text-2xl font-bold group-hover:scale-110 transition-transform duration-300">7+</p>
-                <p className="text-neutral-400 text-sm">Projects Built</p>
+              <div className="bg-neutral-800/50 p-2 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group">
+                <p className="text-primary-400 text-lg sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">7+</p>
+                <p className="text-neutral-400 text-xs sm:text-sm">Projects Built</p>
               </div>
-              <div className="bg-neutral-800/50 p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group col-span-2 md:col-span-1">
-                <p className="text-primary-400 text-2xl font-bold group-hover:scale-110 transition-transform duration-300">10+</p>
-                <p className="text-neutral-400 text-sm">Technologies</p>
+              <div className="bg-neutral-800/50 p-2 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group col-span-2 md:col-span-1">
+                <p className="text-primary-400 text-lg sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">10+</p>
+                <p className="text-neutral-400 text-xs sm:text-sm">Technologies</p>
               </div>
           </motion.div>
         </motion.div>

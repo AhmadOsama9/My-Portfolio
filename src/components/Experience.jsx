@@ -97,9 +97,9 @@ const Experience = () => {
   return (
     <section id="experience" className="relative py-24 bg-gradient-to-b from-neutral-900 via-neutral-900 to-neutral-950">
       {/* Particle Background (Lazy Loaded) */}
-      <Suspense fallback={<div className="absolute inset-0 bg-neutral-900"></div>}>
+      {/* <Suspense fallback={<div className="absolute inset-0 bg-neutral-900"></div>}>
         <ParticleBackground id="experience-particles" particleCount={40} />
-      </Suspense>
+      </Suspense> */}
 
       {/* Background Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

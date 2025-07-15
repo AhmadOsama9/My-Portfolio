@@ -40,64 +40,64 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6">Contact Information</h3>
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary-500/10 text-primary-400">
+                  <div className="flex flex-col xs:flex-row md:flex-row items-center md:items-start gap-2 md:gap-4 text-center md:text-left">
+                    <div className="p-3 rounded-lg bg-primary-500/10 text-primary-400 flex-shrink-0 mx-auto md:mx-0">
                       <FaEnvelope className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                       <h4 className="text-sm font-medium text-neutral-400 mb-1">Email</h4>
                       <a 
                         href="mailto:ahmedosama.dev@outlook.com" 
-                        className="text-white hover:text-primary-400 transition-colors"
+                        className="text-white hover:text-primary-400 transition-colors break-all"
                       >
                         ahmedosama.dev@outlook.com
                       </a>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-blue-500/10 text-blue-400">
+                  <div className="flex flex-col xs:flex-row md:flex-row items-center md:items-start gap-2 md:gap-4 text-center md:text-left">
+                    <div className="p-3 rounded-lg bg-blue-500/10 text-blue-400 flex-shrink-0 mx-auto md:mx-0">
                       <FaLinkedin className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                       <h4 className="text-sm font-medium text-neutral-400 mb-1">LinkedIn</h4>
                       <a 
                         href="https://www.linkedin.com/in/ahmedosama975/" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-white hover:text-blue-400 transition-colors"
+                        className="text-white hover:text-blue-400 transition-colors break-all"
                       >
                         linkedin.com/in/ahmedosama975
                       </a>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-neutral-500/10 text-neutral-300">
+                  <div className="flex flex-col xs:flex-row md:flex-row items-center md:items-start gap-2 md:gap-4 text-center md:text-left">
+                    <div className="p-3 rounded-lg bg-neutral-500/10 text-neutral-300 flex-shrink-0 mx-auto md:mx-0">
                       <FaGithub className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                       <h4 className="text-sm font-medium text-neutral-400 mb-1">GitHub</h4>
                       <a 
                         href="https://github.com/AhmadOsama9" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-white hover:text-neutral-300 transition-colors"
+                        className="text-white hover:text-neutral-300 transition-colors break-all"
                       >
                         github.com/AhmadOsama9
                       </a>
                     </div>
                   </div>
                   
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-green-500/10 text-green-400">
+                  <div className="flex flex-col xs:flex-row md:flex-row items-center md:items-start gap-2 md:gap-4 text-center md:text-left">
+                    <div className="p-3 rounded-lg bg-green-500/10 text-green-400 flex-shrink-0 mx-auto md:mx-0">
                       <FaPhone className="w-5 h-5" />
                     </div>
-                    <div>
+                    <div className="flex flex-col items-center md:items-start">
                       <h4 className="text-sm font-medium text-neutral-400 mb-1">Phone</h4>
                       <a 
                         href="tel:+201022866424" 
-                        className="text-white hover:text-green-400 transition-colors"
+                        className="text-white hover:text-green-400 transition-colors break-all"
                       >
                         +20 1022-866-424
                       </a>
