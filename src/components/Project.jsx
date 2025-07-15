@@ -6,6 +6,7 @@ import { projects } from '../data';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(projects[0]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  // Responsive check
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -88,28 +89,43 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Project Selection Pills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          {projects.map((project, index) => (
-            <button 
-              key={index}
-              onClick={() => selectProject(index)}
-              className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium ${
-                activeIndex === index 
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20' 
-                  : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
-              }`}
+        {/* Project Selection Pills - Dropdown on mobile, pills on desktop */}
+        {isMobile ? (
+          <div className="mb-8">
+            <select
+              className="w-full px-4 py-3 rounded-lg bg-neutral-800 text-neutral-100 border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
+              value={activeIndex}
+              onChange={e => selectProject(Number(e.target.value))}
+              aria-label="Select Project"
             >
-              {project.title}
-            </button>
-          ))}
-        </div>
+              {projects.map((project, index) => (
+                <option key={index} value={index}>{project.title}</option>
+              ))}
+            </select>
+          </div>
+        ) : (
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {projects.map((project, index) => (
+              <button 
+                key={index}
+                onClick={() => selectProject(index)}
+                className={`px-4 py-2 rounded-full transition-all duration-300 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-neutral-900 whitespace-nowrap ${
+                  activeIndex === index 
+                    ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20' 
+                    : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
+                }`}
+              >
+                {project.title}
+              </button>
+            ))}
+          </div>
+        )}
 
         {/* Featured Project Details */}
         <div className="bg-neutral-800 rounded-2xl shadow-xl overflow-hidden border border-neutral-700 transition-all duration-500">
           <AnimatePresence mode="wait">
             <motion.div
-              key={`${selectedProject.title}-${currentImageIndex}`}
+              key={selectedProject.title}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -117,37 +133,82 @@ const Projects = () => {
               className="relative"
               onClick={handleProjectDetailsClick}
             >
-              {/* Image Section - Updated for better proportions */}
-              <div className="relative h-auto md:h-auto bg-neutral-800">
-                {!isImageLoaded && (
-                  <div className="absolute inset-0 bg-neutral-700 animate-pulse min-h-[250px]">
-                    <div className="absolute inset-0 -translate-x-full animate-shimmer bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-                  </div>
-                )}
-                
-                {hasImageError ? (
-                  <div className="h-64 md:h-80 flex items-center justify-center bg-neutral-800">
-                    <div className="text-neutral-500 text-center px-4">
-                      <ImageIcon size={40} className="mx-auto mb-2 opacity-50" />
-                      <p>Unable to load image</p>
+              {/* Image Section - Improved for mobile */}
+              <div className="relative flex flex-col items-center bg-neutral-900">
+                <div className="w-full flex justify-center items-center" style={{ minHeight: isMobile ? '180px' : '300px', maxHeight: isMobile ? '40vh' : '500px' }}>
+                  {!isImageLoaded && (
+                    <div className="absolute inset-0 bg-neutral-700 animate-pulse min-h-[180px] w-full"></div>
+                  )}
+                  {hasImageError ? (
+                    <div className="h-40 flex items-center justify-center w-full bg-neutral-800">
+                      <div className="text-neutral-500 text-center px-4">
+                        <ImageIcon size={40} className="mx-auto mb-2 opacity-50" />
+                        <p>Unable to load image</p>
+                      </div>
                     </div>
+                  ) : (
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentImageIndex}
+                        src={currentImages[currentImageIndex]}
+                        alt={`${selectedProject.title} - ${currentImageIndex + 1}`}
+                        className={`max-w-full object-contain transition-opacity duration-500 w-full ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        style={{ maxHeight: isMobile ? '40vh' : '500px', minHeight: isMobile ? '180px' : '300px' }}
+                        onLoad={() => setIsImageLoaded(true)}
+                        onError={handleImageError}
+                        loading="lazy"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </AnimatePresence>
+                  )}
+                  {/* Navigation Arrows - Modern style */}
+                  {currentImages.length > 1 && (
+                    <>
+                      <button 
+                        onClick={prevImage}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-neutral-800/70 text-white hover:bg-primary-400/80 hover:text-white shadow-md transition-all border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        aria-label="Previous image"
+                        style={{ zIndex: 2 }}
+                      >
+                        <ChevronLeft size={18} />
+                      </button>
+                      <button 
+                        onClick={nextImage}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-neutral-800/70 text-white hover:bg-primary-400/80 hover:text-white shadow-md transition-all border border-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-400"
+                        aria-label="Next image"
+                        style={{ zIndex: 2 }}
+                      >
+                        <ChevronRight size={18} />
+                      </button>
+                    </>
+                  )}
+                </div>
+                {/* Technology Tags - Modern pill style below image */}
+                <div className="w-full flex flex-wrap justify-center gap-2 mt-4 mb-2 px-4">
+                  {selectedProject.technologies.split(', ').slice(0, 6).map((tech, i) => (
+                    <span 
+                      key={i} 
+                      className="px-3 py-1 bg-neutral-700/80 text-xs text-primary-300 rounded-full font-medium shadow-sm border border-neutral-600"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {selectedProject.technologies.split(', ').length > 6 && (
+                    <span className="px-3 py-1 bg-neutral-700/80 text-xs text-primary-300 rounded-full font-medium shadow-sm border border-neutral-600">
+                      +{selectedProject.technologies.split(', ').length - 6}
+                    </span>
+                  )}
+                </div>
+                {/* Project Title and Date - Compact modern row below techs */}
+                <div className="w-full px-4 pb-2 text-center flex flex-col items-center">
+                  <div className="flex flex-col sm:flex-row sm:justify-center sm:items-center gap-1">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white truncate max-w-xs sm:max-w-md" title={selectedProject.title}>{selectedProject.title}</h3>
+                    <span className="text-xs text-neutral-400 ml-0 sm:ml-3">{selectedProject.date}</span>
                   </div>
-                ) : (
-                  <div className="flex justify-center bg-neutral-900">
-                    <img
-                      src={currentImages[currentImageIndex]}
-                      alt={`${selectedProject.title} - ${currentImageIndex + 1}`}
-                      className={`max-w-full object-contain transition-opacity duration-500 max-h-[500px] ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
-                      onLoad={() => setIsImageLoaded(true)}
-                      onError={handleImageError}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-                
-                {/* Semi-transparent overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent pointer-events-none"></div>
-
+                </div>
                 {/* Image Counter Badge */}
                 {currentImages.length > 1 && (
                   <div className="absolute top-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full text-xs text-white flex items-center gap-1.5">
@@ -155,75 +216,8 @@ const Projects = () => {
                     <span>{currentImageIndex + 1}/{currentImages.length}</span>
                   </div>
                 )}
-                
-                {/* Navigation Arrows - Now for images */}
-                {currentImages.length > 1 && (
-                  <>
-                    <div className="absolute inset-y-0 left-0 flex items-center">
-                      <button 
-                        onClick={prevImage}
-                        className="ml-4 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
-                        aria-label="Previous image"
-                      >
-                        <ChevronLeft size={20} />
-                      </button>
-                    </div>
-                    <div className="absolute inset-y-0 right-0 flex items-center">
-                      <button 
-                        onClick={nextImage}
-                        className="mr-4 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
-                        aria-label="Next image"
-                      >
-                        <ChevronRight size={20} />
-                      </button>
-                    </div>
-                  </>
-                )}
-                
-                {/* Project Title Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent pointer-events-none">
-                  <h3 className="text-3xl font-bold text-white mb-2">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-sm text-neutral-300">{selectedProject.date}</p>
-                </div>
-                
-                {/* Project Navigation Indicator */}
-                <div className="absolute bottom-4 right-8 flex gap-1">
-                  {projects.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        activeIndex === index ? 'w-5 bg-primary-400' : 'bg-white/50'
-                      }`}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        selectProject(index);
-                      }}
-                      aria-label={`Go to project ${index + 1}`}
-                    ></button>
-                  ))}
-                </div>
-                
-                {/* Technology Tags */}
-                <div className="absolute top-4 left-4 flex flex-wrap gap-2 max-w-[80%]">
-                  {selectedProject.technologies.split(', ').slice(0, 4).map((tech, i) => (
-                    <span 
-                      key={i} 
-                      className="px-2 py-1 bg-black/60 backdrop-blur-sm text-xs text-white rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {selectedProject.technologies.split(', ').length > 4 && (
-                    <span className="px-2 py-1 bg-black/60 backdrop-blur-sm text-xs text-white rounded-full">
-                      +{selectedProject.technologies.split(', ').length - 4}
-                    </span>
-                  )}
-                </div>
-                
                 {/* Image Navigation Dots */}
-                {currentImages.length > 1 && (
+                {/* {currentImages.length > 1 && (
                   <div className="absolute bottom-16 left-8 flex gap-1">
                     {currentImages.map((_, index) => (
                       <button
@@ -241,51 +235,16 @@ const Projects = () => {
                       ></button>
                     ))}
                   </div>
-                )}
+                )} */}
               </div>
-              
               {/* Content Section */}
-              <div className="p-8">
-                {/* Image Thumbnails - improved layout */}
-                {currentImages.length > 1 && (
-                  <div className="flex gap-2 mb-6 overflow-x-auto pb-2 snap-x">
-                    {currentImages.map((img, index) => (
-                      <button 
-                        key={index}
-                        className={`h-16 w-24 flex-shrink-0 rounded-md overflow-hidden snap-start
-                          ${currentImageIndex === index ? 'ring-2 ring-primary-400' : 'opacity-70 hover:opacity-100'}
-                        `}
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsImageLoaded(false);
-                          setHasImageError(false);
-                          setCurrentImageIndex(index);
-                        }}
-                      >
-                        <div className="h-full w-full bg-neutral-900 flex items-center justify-center">
-                          <img 
-                            src={img} 
-                            alt={`${selectedProject.title} thumbnail ${index + 1}`}
-                            className="max-h-full max-w-full object-contain"
-                            loading="lazy"
-                            onError={(e) => {
-                              e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>';
-                              e.target.className = "w-8 h-8 text-neutral-500";
-                            }}
-                          />
-                        </div>
-                      </button>
-                    ))}
-                  </div>
-                )}
-                
+              <div className="p-4 sm:p-8">
                 <div className="bg-neutral-700/30 p-4 rounded-xl mb-6">
                   <h4 className="text-white text-lg font-semibold mb-2">Project Overview</h4>
                   <p className="text-neutral-300 leading-relaxed">
                     {selectedProject.description}
                   </p>
                 </div>
-                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   {/* Technologies */}
                   <div className="bg-neutral-700/30 p-4 rounded-xl">
@@ -304,7 +263,6 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-                  
                   {/* Links */}
                   <div className="bg-neutral-700/30 p-4 rounded-xl">
                     <h4 className="text-white text-lg font-semibold mb-4 flex items-center">
@@ -494,6 +452,26 @@ const Projects = () => {
         </AnimatePresence>
       </div>
 
+      {/* Project Navigation Dots - Centered below card */}
+      <div className="flex justify-center mt-6">
+        {projects.map((_, index) => (
+          <button
+            key={index}
+            className={`mx-1 w-3 h-3 rounded-full border-2 transition-all duration-300
+              ${activeIndex === index
+                ? 'bg-primary-400 border-primary-400 shadow-lg scale-110'
+                : 'bg-transparent border-neutral-500 hover:bg-primary-300/40'}
+              focus:outline-none focus:ring-2 focus:ring-primary-400`
+            }
+            onClick={(e) => {
+              e.stopPropagation();
+              selectProject(index);
+            }}
+            aria-label={`Go to project ${index + 1}`}
+          ></button>
+        ))}
+      </div>
+
       {/* CSS for shimmer animation */}
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -506,6 +484,8 @@ const Projects = () => {
         }
         `
       }} />
+      {/* Hide scrollbar utility for pills row */}
+      <style>{`.hide-scrollbar::-webkit-scrollbar { display: none; } .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }`}</style>
     </section>
   );
 };
