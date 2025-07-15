@@ -4,98 +4,55 @@ import { motion } from 'framer-motion';
 
 const ParticleBackground = React.lazy(() => import('./helperComponents/ParticleBakcground'));
 
+// Update experienceGroups to reflect new skills and categories
 const experienceGroups = [
   {
     id: 1,
-    icon: <Database className="w-12 h-12 text-blue-400" />,
-    title: "Databases",
-    description: "Designed and managed relational and NoSQL databases for scalable and efficient data storage.",
+    icon: <Cloud className="w-12 h-12 text-cyan-400" />,
+    title: "Cloud & DevOps",
+    description: "Architected and automated cloud infrastructure using AWS (API Gateway, Lambda, CloudWatch, CloudFront, Edge Lambda, S3, IAM), Terraform, Cloudflare, Render, and more. Delivered scalable, secure, and cost-effective solutions.",
     technologies: [
-      { name: "PostgreSQL", usage: "Used for complex relational data in the Education Platform and TikTok-like Backend." },
-      { name: "MongoDB", usage: "Implemented for flexible schema designs in the Social Media Clone." },
-      { name: "MySQL", usage: "Utilized for structured data in smaller projects." },
+      "AWS API Gateway", "AWS Lambda", "CloudWatch", "CloudFront", "Edge Lambda", "S3", "IAM", "Terraform", "Cloudflare", "Render", "Postman", "File Storage", "CDN"
     ],
-    parallaxSpeed: -10,
-    color: "from-blue-500/20 to-blue-700/5",
-    accent: "border-blue-400",
-    iconBg: "bg-blue-500/10"
+    color: "from-cyan-400/20 to-cyan-700/5",
+    accent: "border-cyan-400",
+    iconBg: "bg-cyan-400/10"
   },
   {
     id: 2,
-    icon: <Cloud className="w-12 h-12 text-yellow-500" />,
-    title: "Cloud & DevOps",
-    description: "Deployed and managed cloud infrastructure using modern DevOps practices.",
+    icon: <Cpu className="w-12 h-12 text-emerald-400" />,
+    title: "Backend Engineering",
+    description: "Built robust APIs and backend services with Python, Node.js, Express, and both REST & GraphQL. Focused on reliability, scalability, and performance.",
     technologies: [
-      { name: "AWS", usage: "Used S3, Lambda, RDS, and CloudFront for scalable cloud solutions." },
-      { name: "Docker", usage: "Containerized applications for consistent development and deployment environments." },
-      { name: "GitHub Actions", usage: "Implemented CI/CD pipelines for automated deployments." },
-      { name: "Nginx", usage: "Configured as a reverse proxy and load balancer for backend services." },
+      "Python", "Node.js", "Express", "REST APIs", "GraphQL"
     ],
-    parallaxSpeed: 50,
-    color: "from-yellow-500/20 to-yellow-700/5",
-    accent: "border-yellow-400",
-    iconBg: "bg-yellow-500/10"
+    color: "from-emerald-400/20 to-emerald-700/5",
+    accent: "border-emerald-400",
+    iconBg: "bg-emerald-400/10"
   },
   {
     id: 3,
-    icon: <Cpu className="w-12 h-12 text-green-500" />,
-    title: "Backend Development",
-    description: "Built robust and scalable backend services using modern frameworks and tools.",
+    icon: <Code className="w-12 h-12 text-fuchsia-400" />,
+    title: "Frontend Engineering",
+    description: "Developed modern, responsive UIs with Next.js, React, Tailwind CSS, and TypeScript. Bridged backend power with beautiful user experiences.",
     technologies: [
-      { name: "Node.js", usage: "Developed RESTful APIs and real-time features for multiple projects." },
-      { name: "Express.js", usage: "Used for building lightweight and efficient backend services." },
-      { name: "NestJS", usage: "Implemented for modular and maintainable backend architectures." },
-      { name: "Swagger", usage: "Integrated for API documentation and testing." },
+      "Next.js", "React", "Tailwind CSS", "TypeScript"
     ],
-    parallaxSpeed: 80,
-    color: "from-green-500/20 to-green-700/5",
-    accent: "border-green-400",
-    iconBg: "bg-green-500/10"
+    color: "from-fuchsia-400/20 to-fuchsia-700/5",
+    accent: "border-fuchsia-400",
+    iconBg: "bg-fuchsia-400/10"
   },
   {
     id: 4,
-    icon: <Code className="w-12 h-12 text-red-500" />,
-    title: "Frontend Development",
-    description: "Created dynamic and responsive user interfaces for seamless user experiences.",
+    icon: <Settings className="w-12 h-12 text-orange-400" />,
+    title: "SaaS & Automation",
+    description: "Accelerated delivery with SaaS platforms (Render), CI/CD, Docker, Infrastructure as Code, and workflow automation.",
     technologies: [
-      { name: "React", usage: "Built interactive UIs for the Education Platform and Social Media Clone." },
-      { name: "Tailwind CSS", usage: "Used for styling and creating responsive designs." },
-      { name: "TypeScript", usage: "Leveraged for type-safe development and improved code quality." },
+      "Render", "CI/CD", "Docker", "IaC", "Automation"
     ],
-    parallaxSpeed: 40,
-    color: "from-red-500/20 to-red-700/5",
-    accent: "border-red-400",
-    iconBg: "bg-red-500/10"
-  },
-  {
-    id: 5,
-    icon: <Settings className="w-12 h-12 text-purple-500" />,
-    title: "System Integration",
-    description: "Seamlessly integrated new software with existing systems for streamlined workflows.",
-    technologies: [
-      { name: "Docker Compose", usage: "Orchestrated multi-container setups for local development." },
-      { name: "CI/CD Pipelines", usage: "Automated build and deployment processes using GitHub Actions." },
-      { name: "API Gateways", usage: "Configured Nginx as a reverse proxy for backend services." },
-    ],
-    parallaxSpeed: 50,
-    color: "from-purple-500/20 to-purple-700/5",
-    accent: "border-purple-400",
-    iconBg: "bg-purple-500/10"
-  },
-  {
-    id: 6,
-    icon: <Shield className="w-12 h-12 text-blue-500" />,
-    title: "Security & Optimization",
-    description: "Implemented security measures and optimized performance for scalable applications.",
-    technologies: [
-      { name: "JWT Authentication", usage: "Used for secure user authentication in backend services." },
-      { name: "AWS IAM", usage: "Managed access control for cloud resources." },
-      { name: "Query Optimization", usage: "Improved database performance with optimized queries." },
-    ],
-    parallaxSpeed: 55,
-    color: "from-blue-500/20 to-blue-700/5",
-    accent: "border-blue-400",
-    iconBg: "bg-blue-500/10"
+    color: "from-orange-400/20 to-orange-700/5",
+    accent: "border-orange-400",
+    iconBg: "bg-orange-400/10"
   },
 ];
 
@@ -160,11 +117,10 @@ const Experience = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-neutral-100 mb-4 inline-block relative">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 mb-4 inline-block relative">
             Technologies & Expertise
-            <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 to-blue-500 rounded-full"></span>
           </h2>
-          <p className="text-lg text-neutral-300 max-w-2xl mx-auto mt-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-300 max-w-2xl mx-auto mt-4">
             A showcase of the technologies I've mastered and how I've applied them in my projects.
           </p>
         </motion.div>
@@ -217,10 +173,10 @@ const Experience = () => {
 
               {/* Title & Description */}
               <div className="relative z-10">
-                <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-primary-400 transition-colors duration-300">
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 text-white group-hover:text-primary-400 transition-colors duration-300">
                   {group.title}
                 </h3>
-                <p className="text-neutral-300 mb-6 leading-relaxed text-sm md:text-base">{group.description}</p>
+                <p className="text-base sm:text-lg md:text-xl text-neutral-300 mb-6 leading-relaxed">{group.description}</p>
 
                 {/* Technologies List */}
                 <motion.div 
@@ -240,8 +196,7 @@ const Experience = () => {
                         hover:bg-black/20 transition-all duration-300 hover:pl-5`}
                       variants={techItemVariants}
                     >
-                      <p className="font-medium text-white">{tech.name}</p>
-                      <p className="text-neutral-400 text-sm mt-1">{tech.usage}</p>
+                      <p className="font-medium text-white">{tech}</p>
                     </motion.div>
                   ))}
                 </motion.div>

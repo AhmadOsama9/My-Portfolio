@@ -19,11 +19,10 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-neutral-100 mb-4 relative inline-block">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 mb-4 relative inline-block">
             Get In Touch
-            <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 to-blue-500 rounded-full"></span>
           </h2>
-          <p className="text-lg text-neutral-300 max-w-2xl mx-auto mt-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-300 max-w-2xl mx-auto mt-4">
             Have a project in mind or want to explore opportunities? I'd love to hear from you.
             Feel free to reach out through any of the channels below.
           </p>
@@ -39,7 +38,7 @@ const Contact = () => {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6">Contact Information</h3>
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-lg bg-primary-500/10 text-primary-400">
@@ -108,17 +107,17 @@ const Contact = () => {
               </div>
               
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Let's Work Together</h3>
-                <p className="text-neutral-300 mb-6">
+                <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6">Let's Work Together</h3>
+                <p className="text-base sm:text-lg md:text-xl text-neutral-300 mb-6">
                   Whether you're looking for a developer for your next project, have a question about my work,
                   or just want to connect, I'm always open to new opportunities and conversations.
                 </p>
-                <p className="text-neutral-400 mb-6">
+                <p className="text-base sm:text-lg md:text-xl text-neutral-400 mb-6">
                   Currently available for freelance projects and full-time opportunities.
                 </p>
                 
                 <div className="p-4 border border-dashed border-neutral-600 rounded-lg bg-neutral-800/50">
-                  <p className="text-neutral-300 text-sm">
+                  <p className="text-base sm:text-lg md:text-xl text-neutral-300 text-sm">
                     <span className="text-primary-400 font-semibold">Quick Response Time:</span> I usually respond to all inquiries within 24 hours.
                   </p>
                 </div>
@@ -134,8 +133,8 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-semibold text-white">Ready to start a project?</h3>
-              <p className="text-neutral-400 mt-1">Let's discuss your ideas</p>
+              <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white">Ready to start a project?</h3>
+              <p className="text-base sm:text-lg md:text-xl text-neutral-400 mt-1">Let's discuss your ideas</p>
             </div>
             <a
               href="mailto:ahmedosama.dev@outlook.com?subject=Project%20Inquiry"
@@ -145,9 +144,6 @@ const Contact = () => {
             </a>
           </motion.div>
           
-          <div className="text-center mt-12 text-neutral-500 text-sm">
-            <p>© {new Date().getFullYear()} Ahmed Osama. All rights reserved.</p>
-          </div>
         </div>
       </div>
     </section>

@@ -79,9 +79,8 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-neutral-100 mb-4 relative inline-block">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 mb-4 relative inline-block">
             Featured Projects
-            <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 to-blue-500 rounded-full"></span>
           </h2>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto mt-4">
             Explore some of my recent work, showcasing my skills in full-stack development, 

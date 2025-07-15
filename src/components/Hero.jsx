@@ -192,7 +192,7 @@ export function useDistributedDataFlow(options = {}) {
   };
 
   return (
-    <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden">
+    <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden pt-10 sm:pt-16 md:pt-24 pb-4 sm:pb-8 md:pb-12">
       {/* Add syntax highlighting styles */}
       <style jsx global>{`
         .code-comment { color: #6b7280; }
@@ -254,7 +254,7 @@ export function useDistributedDataFlow(options = {}) {
           
           {/* Main Heading */}
           <motion.h1 
-            className="text-5xl md:text-6xl font-bold text-neutral-100 leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 leading-tight"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
@@ -266,7 +266,7 @@ export function useDistributedDataFlow(options = {}) {
           
           {/* Description */}
           <motion.p 
-            className="text-xl text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >

@@ -7,7 +7,6 @@ import {
 } from "./assets/index";
 
 // Import multiple images for Social Media Frontend
-import socialMediaFrontend1 from "./assets/social_media_clone_frontend/social_media_frontend_1.png";
 import socialMediaFrontend1_2 from "./assets/social_media_clone_frontend/social_media_frontend_1.2.png";
 import socialMediaFrontend2 from "./assets/social_media_clone_frontend/social_media_frontend_2.png";
 import socialMediaFrontend2_2 from "./assets/social_media_clone_frontend/social_media_frontend_2.2.png";
@@ -169,7 +168,6 @@ export const projects = [
     {
       title: 'Social Media Clone (Frontend)',
       images: [
-        socialMediaFrontend1,
         socialMediaFrontend1_2,
         socialMediaFrontend2,
         socialMediaFrontend2_2,

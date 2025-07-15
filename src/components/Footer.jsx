@@ -37,8 +37,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
           {/* About Section */}
           <div className="md:col-span-5">
-            <h3 className="text-2xl font-bold text-white mb-4">Ahmed Osama</h3>
-            <p className="text-neutral-400 mb-6 leading-relaxed">
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">Ahmed Osama</h3>
+            <p className="text-sm sm:text-base md:text-lg text-neutral-400 mb-6 leading-relaxed">
               A passionate full-stack developer focused on creating intuitive, responsive, and scalable web applications
               with modern technologies and best practices.
             </p>
@@ -74,7 +74,7 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div className="md:col-span-3">
-            <h4 className="text-lg font-bold text-white border-b border-neutral-800 pb-2 mb-4">
+            <h4 className="text-base sm:text-lg md:text-xl font-bold text-white border-b border-neutral-800 pb-2 mb-4">
               Navigation
             </h4>
             <ul className="grid grid-cols-2 gap-2">
@@ -82,7 +82,7 @@ const Footer = () => {
                 <li key={item.id}>
                   <a
                     href={item.url}
-                    className="inline-block py-1.5 text-sm text-neutral-400 hover:text-primary-400 transition-colors"
+                    className="inline-block py-1.5 text-xs sm:text-sm md:text-base text-neutral-400 hover:text-primary-400 transition-colors"
                   >
                     {item.title}
                   </a>
@@ -93,11 +93,11 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div className="md:col-span-4">
-            <h4 className="text-lg font-bold text-white border-b border-neutral-800 pb-2 mb-4">
+            <h4 className="text-base sm:text-lg md:text-xl font-bold text-white border-b border-neutral-800 pb-2 mb-4">
               Contact Information
             </h4>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-neutral-400">
+              <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base text-neutral-400">
                 <div className="p-2 bg-neutral-800 rounded-lg">
                   <FaEnvelope className="text-primary-400" />
                 </div>
@@ -108,7 +108,7 @@ const Footer = () => {
                   ahmedosama.dev@outlook.com
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-neutral-400">
+              <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base text-neutral-400">
                 <div className="p-2 bg-neutral-800 rounded-lg">
                   <FaPhone className="text-primary-400" />
                 </div>
@@ -124,11 +124,11 @@ const Footer = () => {
         <div className="h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent my-8"></div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 text-neutral-500 text-sm">
-          <p>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 text-neutral-500 text-xs sm:text-sm md:text-base">
+          <p className="text-xs sm:text-sm md:text-base">
             &copy; {new Date().getFullYear()} Ahmed Osama. All rights reserved.
           </p>
-          <p className="flex items-center gap-1">
+          <p className="flex items-center gap-1 text-xs sm:text-sm md:text-base">
             <span>Made</span> 
             <span>using React & Tailwind CSS</span>
           </p>
