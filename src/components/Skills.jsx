@@ -109,19 +109,19 @@ const Skills = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 mb-4 relative inline-block">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-100 mb-4 relative inline-block">
             Skills
           </h2>
-          <p className="text-lg text-neutral-300 max-w-3xl mx-auto mt-4">
+          <p className="text-base text-neutral-300 max-w-3xl mx-auto mt-4">
             A visual showcase of the technologies and tools I use to build modern, scalable solutions.
           </p>
         </motion.div>
         {/* Icon Grid */}
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-10 justify-items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-8 justify-items-center">
           {skillIcons.map((item, i) => (
             <div
               key={i}
-              className="relative flex items-center justify-center text-5xl sm:text-6xl md:text-7xl cursor-pointer"
+              className="relative flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl cursor-pointer"
               onClick={() => {
                 setGlowStates(prev => {
                   const newStates = [...prev];
@@ -131,7 +131,7 @@ const Skills = () => {
               }}
             >
               {/* Glow effect toggled by click/tap */}
-              <span className={`absolute inset-0 m-auto w-16 h-16 rounded-full blur-2xl transition-opacity duration-300 pointer-events-none ${item.glow} ${glowStates[i] ? 'opacity-100' : 'opacity-0'}`}></span>
+              <span className={`absolute inset-0 m-auto w-12 h-12 rounded-full blur-2xl transition-opacity duration-300 pointer-events-none ${item.glow} ${glowStates[i] ? 'opacity-100' : 'opacity-0'}`}></span>
               {item.icon}
             </div>
           ))}
