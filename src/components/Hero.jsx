@@ -51,7 +51,7 @@ const Hero = React.memo(() => {
   };
 
   return (
-    <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden pt-6 sm:pt-12 md:pt-24 pb-2 sm:pb-8 md:pb-12">
+    <section id="hero" className="relative w-full min-h-screen bg-neutral-900 overflow-hidden pt-6 xs:pt-8 sm:pt-12 md:pt-24 pb-2 sm:pb-8 md:pb-12">
       {/* Add syntax highlighting styles */}
       <style jsx global>{`
         .code-comment { color: #6b7280; }
