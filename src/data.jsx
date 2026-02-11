@@ -74,7 +74,7 @@ import nexwe3_9 from "./assets/nexwe3/nexwe3_9.png";
 
 
 export const navigation = [
-  { id: "0", title: "Home", url: "#home" },
+  { id: "0", title: "Home", url: "#hero" },
   { id: "1", title: "About", url: "#about" },
   { id: "2", title: "Projects", url: "#projects" },
   { id: "3", title: "Experience", url: "#experience"},
