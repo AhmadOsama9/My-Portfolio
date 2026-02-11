@@ -9,7 +9,36 @@ const Hero = React.memo(() => {
   const preRef = useRef(null);
   
   // Enhanced professional code sample with modern patterns
-  const codeString = `// Ahmed Osama - Full-Stack & Cloud Engineer\nimport AWS from 'aws-sdk';\nimport Terraform from 'terraform';\nimport NextJS from 'next';\nimport React from 'react';\nimport Python from 'python';\nimport NodeJS from 'node';\nimport { Lambda, APIGateway, S3, IAM, CloudFront, CloudWatch } from 'aws-sdk/services';\n\n// Infrastructure as Code\nconst infra = new Terraform({\n  provider: 'aws',\n  region: 'eu-central-1',\n  resources: [\n    'lambda', 'apigateway', 's3', 'cloudfront', 'iam', 'cloudwatch'\n  ]\n});\n\n// Cloud Function\nexport const handler = async (event) => {\n  // Business logic with Python/Node.js\n  return {\n    statusCode: 200,\n    body: JSON.stringify({\n      message: 'Cloud-native, scalable, secure.'\n    })\n  };\n};\n\n// Frontend\nexport default function App() {\n  return <NextJS />;\n}\n`;
+  const codeString = `import json
+import boto3
+from botocore.exceptions import ClientError
+
+# Backend Logic: Scalable & Serverless
+def lambda_handler(event, context):
+    """
+    Handles critical infrastructure events
+    with robust error handling and logging.
+    """
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('ProductionTable')
+
+    try:
+        # Optimized for performance and cost
+        response = table.put_item(
+            Item={
+                'id': event['request_id'],
+                'status': 'processed',
+                'infrastructure': 'terraform-managed'
+            }
+        )
+        return {
+            'statusCode': 200,
+            'body': json.dumps('System Operational')
+        }
+    except ClientError as e:
+        print(f"Error: {e.response['Error']['Message']}")
+        raise e
+`;
 
   // Auto-scroll to follow typing
   useEffect(() => {
@@ -108,28 +137,26 @@ const Hero = React.memo(() => {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            Full-Stack & Cloud Engineer
+            Backend & Cloud Engineer
           </motion.p>
           
           {/* Main Heading */}
           <motion.h1 
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-bold text-neutral-100 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-100 leading-tight mb-6"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            Building Scalable Systems from
-            <span className="text-primary-400 relative"> Vision</span> to
-            <br />
-            <span className="text-primary-400 relative inline-block">Execution</span>
+            Building Scalable 
+            <span className="text-primary-400"> Cloud Systems</span> on AWS
           </motion.h1>
           
           {/* Description */}
           <motion.p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8"
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            I'm a software engineer with a full-stack foundation and a backend-first mindset. I build reliable cloud-native applications using modern frameworks and AWS infrastructure.
+            I architect and build production-ready backend infrastructure. Specialized in Python, Serverless, and Infrastructure as Code.
           </motion.p>
           
           {/* CTA Buttons */}
@@ -188,8 +215,8 @@ const Hero = React.memo(() => {
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
               <div className="mx-auto text-neutral-400 text-sm flex items-center">
-                <span className="mr-2 opacity-70">~/projects/cloud-architecture/</span>
-                <span className="font-medium">distributed-data-hook.tsx</span>
+                <span className="mr-2 opacity-70">~/backend/services/</span>
+                <span className="font-medium">data_processor.py</span>
               </div>
             </div>
             
@@ -234,9 +261,9 @@ const Hero = React.memo(() => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2, type: "spring" }}
                 >
-                  <div className="text-xs text-neutral-400">Best Practice</div>
+                  <div className="text-xs text-neutral-400">Security</div>
                   <div className="text-primary-400 text-sm font-medium mt-1">
-                    Optimistic updates improve UX by showing immediate feedback
+                    Robust error handling with boto3 exceptions
                   </div>
                 </motion.div>
               )}
@@ -254,7 +281,7 @@ const Hero = React.memo(() => {
                     animate={{ opacity: [0.7, 1, 0.7] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    Expertise in modern React patterns
+                    Serverless Scale
                   </motion.span>
                 </motion.div>
               )}
@@ -265,12 +292,12 @@ const Hero = React.memo(() => {
               <div className="flex items-center space-x-4">
                 <span className="flex items-center">
                   <span className="h-2 w-2 rounded-full bg-blue-500 mr-1.5"></span>
-                  TypeScript
+                  Python 3.12
                 </span>
                 <span>UTF-8</span>
               </div>
               <div className="flex items-center space-x-3">
-                <span className="px-1.5 py-0.5 bg-neutral-700/50 rounded text-[10px]">ES2023</span>
+                <span className="px-1.5 py-0.5 bg-neutral-700/50 rounded text-[10px]">AWS Lambda</span>
                 <span>{Math.min(Math.floor((index / codeString.length) * 100), 100)}%</span>
               </div>
             </div>
@@ -281,15 +308,15 @@ const Hero = React.memo(() => {
   );
 });
 
-// Enhanced syntax highlighting function with better typing support
+// Enhanced syntax highlighting function with Python support
 function formatLineWithSyntax(line) {
   // Handle comments first
-  if (line.trimStart().startsWith('//')) {
+  if (line.trimStart().startsWith('#')) {
     return <span className="code-comment">{line}</span>;
   }
   
-  // Handle JSDoc comments
-  if (line.trimStart().startsWith('/*') || line.trimStart().startsWith(' *')) {
+  // Handle Docstrings
+  if (line.trimStart().startsWith('"""') || line.trimStart().startsWith('"""')) {
     return <span className="code-jsdoc">{line}</span>;
   }
   
@@ -299,11 +326,13 @@ function formatLineWithSyntax(line) {
   let insideString = false;
   let stringDelimiter = '';
   
-  const keywords = ['import', 'from', 'export', 'function', 'const', 'let', 'var', 'return', 
-                    'async', 'await', 'try', 'catch', 'finally', 'if', 'else', 'for', 'while', 
-                    'useQuery', 'useMutation', 'useState', 'useCallback', 'useContext', 'useEffect'];
-  const booleanValues = ['true', 'false', 'null', 'undefined'];
-  const operators = ['=>', '===', '!==', '+=', '-=', '*=', '/=', '&&', '||', '??', '?', ':'];
+  // Python Keywords
+  const keywords = ['import', 'from', 'def', 'class', 'return', 'try', 'except', 
+                    'if', 'else', 'elif', 'for', 'while', 'in', 'not', 'and', 'or', 'as', 
+                    'pass', 'raise', 'with', 'lambda', 'async', 'await'];
+  
+  const booleanValues = ['True', 'False', 'None'];
+  const operators = ['=', '==', '!=', '+=', '-=', '*=', '/=', 'and', 'or', 'not', ':'];
   
   function commitCurrentWord() {
     if (currentWord) {
@@ -314,10 +343,14 @@ function formatLineWithSyntax(line) {
       } else if (/^\d+$/.test(currentWord)) {
         parts.push(<span key={parts.length} className="code-number">{currentWord}</span>);
       } else if (currentWord.startsWith('@')) {
-        parts.push(<span key={parts.length} className="code-path">{currentWord}</span>);
-      } else if (/^[A-Z][a-zA-Z0-9]*$/.test(currentWord)) {
-        // Detect component/class names (PascalCase)
+        parts.push(<span key={parts.length} className="code-function">{currentWord}</span>); // Decorators
+      } else if (/^[A-Z][a-zA-Z0-9]*$/.test(currentWord) && currentWord !== 'JSON') {
+         // Heuristic for Class names (PascalCase in Python often indicates classes)
+         // Excluding JSON if it appears like a class but meant to be module reference sometimes
         parts.push(<span key={parts.length} className="code-function">{currentWord}</span>);
+      } else if (line.includes('def ') && line.includes(currentWord + '(')) {
+         // Function definition name
+         parts.push(<span key={parts.length} className="code-function">{currentWord}</span>);
       } else {
         parts.push(<span key={parts.length}>{currentWord}</span>);
       }

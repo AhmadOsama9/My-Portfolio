@@ -58,7 +58,7 @@ const NavBar = React.memo(() => {
           </div>
           <div className="flex flex-col">
             <span className="text-white font-bold text-xl tracking-tight">Ahmed<span className="text-primary-400">Dev</span></span>
-            <span className="text-xs text-neutral-400 -mt-1 font-medium">Full-Stack Engineer</span>
+            <span className="text-xs text-neutral-400 -mt-1 font-medium">Backend Engineer</span>
           </div>
         </motion.a>
 

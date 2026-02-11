@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaReact, FaNodeJs, FaAws, FaDocker, FaPython, FaJava, FaGitAlt, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiMongodb, SiNestjs, SiExpress, SiGithubactions, SiJavascript, SiJest, SiRedux, SiTerraform } from 'react-icons/si';
+import { SiTypescript, SiPostgresql, SiMongodb, SiNestjs, SiExpress, SiGithubactions, SiJavascript, SiJest, SiRedux, SiTerraform, SiPostman, SiMysql } from 'react-icons/si';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
@@ -11,7 +11,7 @@ const skillCategories = [
   {
     name: "Cloud & DevOps",
     icon: <FaAws className="text-yellow-400" />,
-    description: "Architecting and automating cloud infrastructure with AWS, Terraform, Cloudflare, and more.",
+    description: "Designed and operated production-ready serverless systems on AWS using Lambda, API Gateway, CloudWatch, S3, and IAM. Managed infrastructure with Terraform, focusing on scalability, reliability, and cost efficiency.",
     skills: [
       { icon: <FaAws className="text-yellow-400" />, name: "AWS (API Gateway, Lambda, CloudWatch, CloudFront, Edge Lambda, S3, IAM)" },
       { icon: <SiTerraform className="text-purple-400" />, name: "Terraform" },
@@ -24,7 +24,7 @@ const skillCategories = [
   {
     name: "Backend Engineering",
     icon: <FaPython className="text-blue-400" />,
-    description: "Building robust APIs and backend services with Python, Node.js, Express, REST & GraphQL.",
+    description: "Built and maintained backend services and APIs primarily in Python, with experience in Node.js and Express. Focused on scalability, reliability, and performance.",
     skills: [
       { icon: <FaPython className="text-blue-400" />, name: "Python" },
       { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
@@ -49,7 +49,7 @@ const skillCategories = [
   {
     name: "SaaS & Automation",
     icon: <FaDocker className="text-blue-400" />,
-    description: "Accelerating delivery with SaaS platforms, CI/CD, Docker, Infrastructure as Code, and automation.",
+    description: "Supported backend delivery using Docker, CI/CD pipelines, Infrastructure as Code, and managed platforms like Render.",
     skills: [
       { icon: <FaDocker className="text-blue-400" />, name: "Docker" },
       { icon: <SiGithubactions className="text-gray-200" />, name: "CI/CD" },
@@ -68,24 +68,23 @@ const levelToExpertise = (level) => {
 };
 
 const skillIcons = [
+  { icon: <FaPython className="text-blue-400" />, glow: 'bg-blue-300/80' },
+  { icon: <FaGitAlt className="text-orange-600" />, glow: 'bg-orange-500/80' },
+  { icon: <FaAws className="text-yellow-400" />, glow: 'bg-yellow-300/80' },
+  { icon: <SiTerraform className="text-purple-400" />, glow: 'bg-purple-300/80' },
+  { icon: <SiPostman className="text-orange-500" />, glow: 'bg-orange-400/80' },
+  { icon: <SiMysql className="text-blue-500" />, glow: 'bg-blue-400/80' },
   { icon: <FaReact className="text-blue-400" />, glow: 'bg-blue-400/80' },
   { icon: <FaNodeJs className="text-green-500" />, glow: 'bg-green-400/80' },
-  { icon: <FaAws className="text-yellow-400" />, glow: 'bg-yellow-300/80' },
   { icon: <FaDocker className="text-blue-400" />, glow: 'bg-blue-300/80' },
-  { icon: <FaPython className="text-blue-400" />, glow: 'bg-blue-300/80' },
   { icon: <FaJava className="text-orange-500" />, glow: 'bg-orange-400/80' },
-  { icon: <FaGitAlt className="text-orange-600" />, glow: 'bg-orange-500/80' },
   { icon: <FaDatabase className="text-orange-500" />, glow: 'bg-orange-400/80' },
   { icon: <SiTypescript className="text-blue-600" />, glow: 'bg-blue-500/80' },
   { icon: <SiPostgresql className="text-blue-500" />, glow: 'bg-blue-400/80' },
   { icon: <SiMongodb className="text-green-700" />, glow: 'bg-green-500/80' },
-  { icon: <SiNestjs className="text-red-500" />, glow: 'bg-red-400/80' },
   { icon: <SiExpress className="text-gray-500" />, glow: 'bg-gray-400/80' },
   { icon: <SiGithubactions className="text-gray-200" />, glow: 'bg-gray-300/80' },
   { icon: <SiJavascript className="text-yellow-400" />, glow: 'bg-yellow-300/80' },
-  { icon: <SiJest className="text-red-600" />, glow: 'bg-red-400/80' },
-  { icon: <SiRedux className="text-purple-500" />, glow: 'bg-purple-400/80' },
-  { icon: <SiTerraform className="text-purple-400" />, glow: 'bg-purple-300/80' },
   { icon: <RiTailwindCssFill className="text-blue-400" />, glow: 'bg-blue-300/80' },
 ];
 

@@ -39,8 +39,7 @@ const Footer = () => {
           <div className="md:col-span-5">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">Ahmed Osama</h3>
             <p className="text-sm sm:text-base md:text-lg text-neutral-400 mb-6 leading-relaxed">
-              A passionate full-stack developer focused on creating intuitive, responsive, and scalable web applications
-              with modern technologies and best practices.
+              Backend engineer focused on building scalable, reliable systems using AWS and serverless architectures, with an interest in AI-driven products.
             </p>
             
             <div className="flex space-x-4 mb-8">
@@ -108,14 +107,14 @@ const Footer = () => {
                   ahmedosama.dev@outlook.com
                 </a>
               </li>
-              <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base text-neutral-400">
+              {/* <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base text-neutral-400">
                 <div className="p-2 bg-neutral-800 rounded-lg">
                   <FaPhone className="text-primary-400" />
                 </div>
                 <a href="tel:+201022866424" className="hover:text-primary-400 transition-colors">
                   +20 1022-866-424
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

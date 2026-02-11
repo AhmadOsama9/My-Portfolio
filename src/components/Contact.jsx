@@ -89,7 +89,7 @@ const Contact = () => {
                     </div>
                   </div>
                   
-                  <div className="flex flex-col xs:flex-row md:flex-row items-center md:items-start gap-2 md:gap-4 text-center md:text-left">
+                  {/* <div className="flex flex-col xs:flex-row md:flex-row items-center md:items-start gap-2 md:gap-4 text-center md:text-left">
                     <div className="p-3 rounded-lg bg-green-500/10 text-green-400 flex-shrink-0 mx-auto md:mx-0">
                       <FaPhone className="w-5 h-5" />
                     </div>
@@ -102,19 +102,18 @@ const Contact = () => {
                         +20 1022-866-424
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               
               <div>
                 <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-6">Let's Work Together</h3>
                 <p className="text-base sm:text-lg md:text-xl text-neutral-300 mb-6">
-                  Whether you're looking for a developer for your next project, have a question about my work,
-                  or just want to connect, I'm always open to new opportunities and conversations.
+                  Whether you’re looking for a backend engineer for your next project, have a question about my work, or just want to connect, I’m always open to new opportunities and conversations.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl text-neutral-400 mb-6">
+                {/* <p className="text-base sm:text-lg md:text-xl text-neutral-400 mb-6">
                   Currently available for freelance projects and full-time opportunities.
-                </p>
+                </p> */}
                 
                 <div className="p-4 border border-dashed border-neutral-600 rounded-lg bg-neutral-800/50">
                   <p className="text-base sm:text-lg md:text-xl text-neutral-300 text-sm">
