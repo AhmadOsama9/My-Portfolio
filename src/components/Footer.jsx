@@ -39,7 +39,7 @@ const Footer = () => {
           <div className="md:col-span-5">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4">Ahmed Osama</h3>
             <p className="text-sm sm:text-base md:text-lg text-neutral-400 mb-6 leading-relaxed">
-              Backend engineer focused on building scalable, reliable systems using AWS and serverless architectures, with an interest in AI-driven products.
+              Backend engineer building scalable, production systems on AWS and serverless architectures — with a growing focus on applied AI.
             </p>
             
             <div className="flex space-x-4 mb-8">

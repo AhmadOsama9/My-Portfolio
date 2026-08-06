@@ -79,8 +79,7 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-neutral-300 max-w-2xl mx-auto mt-4">
-            Explore some of my recent work, showcasing my skills in full-stack development, 
-            problem-solving, and innovative design.
+            A selection of projects I've built to sharpen specific skills — from backend architecture to full-stack development.
           </p>
         </motion.div>
 
