@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaPython, FaJava, FaGitAlt, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiPostgresql, SiMongodb, SiNestjs, SiExpress, SiGithubactions, SiJavascript, SiJest, SiRedux, SiTerraform, SiPostman, SiMysql } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaAws, FaDocker, FaPython, FaGitAlt, FaDatabase } from 'react-icons/fa';
+import { SiPostgresql, SiMongodb, SiExpress, SiGithubactions, SiJavascript, SiTerraform, SiPostman, SiMysql, SiStripe, SiHubspot, SiCloudflare } from 'react-icons/si';
 import { RiTailwindCssFill } from 'react-icons/ri';
+import { Plug, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
 import { useSwipeable } from 'react-swipeable';
@@ -11,51 +12,49 @@ const skillCategories = [
   {
     name: "Cloud & DevOps",
     icon: <FaAws className="text-yellow-400" />,
-    description: "Designed and operated production-ready serverless systems on AWS using Lambda, API Gateway, CloudWatch, S3, and IAM. Managed infrastructure with Terraform, focusing on scalability, reliability, and cost efficiency.",
+    description: "Designed and operated production-ready serverless systems on AWS using Lambda, API Gateway, CloudWatch, S3, and CloudFront. Managed infrastructure with Terraform, focusing on scalability, reliability, and cost efficiency.",
     skills: [
-      { icon: <FaAws className="text-yellow-400" />, name: "AWS (API Gateway, Lambda, CloudWatch, CloudFront, Edge Lambda, S3, IAM)" },
+      { icon: <FaAws className="text-yellow-400" />, name: "AWS (Lambda, API Gateway, CloudWatch, CloudFront, S3)" },
       { icon: <SiTerraform className="text-purple-400" />, name: "Terraform" },
-      { icon: <FaDocker className="text-blue-400" />, name: "Docker" },
+      { icon: <FaDocker className="text-blue-400" />, name: "Docker (local dev environments)" },
       { icon: <SiGithubactions className="text-gray-200" />, name: "CI/CD" },
-      { icon: <SiPostgresql className="text-blue-500" />, name: "File Storage" },
-      { icon: <SiPostgresql className="text-blue-500" />, name: "CDN, Cloudflare, Render, Postman" },
+      { icon: <SiCloudflare className="text-orange-400" />, name: "Cloudflare (Pages, Functions, Access/Zero Trust)" },
+      { icon: <SiPostman className="text-orange-500" />, name: "Postman" },
     ]
   },
   {
     name: "Backend Engineering",
     icon: <FaPython className="text-blue-400" />,
-    description: "Built and maintained backend services and APIs primarily in Python, with experience in Node.js and Express. Focused on scalability, reliability, and performance.",
+    description: "Built and maintained production backend services and APIs primarily in Python, with real experience in Node.js and Express. Focused on scalability, reliability, and real-time/third-party integration.",
     skills: [
       { icon: <FaPython className="text-blue-400" />, name: "Python" },
       { icon: <FaNodeJs className="text-green-500" />, name: "Node.js" },
       { icon: <SiExpress className="text-gray-500" />, name: "Express" },
       { icon: <SiJavascript className="text-yellow-400" />, name: "REST APIs" },
-      { icon: <SiJavascript className="text-yellow-400" />, name: "GraphQL" },
+      { icon: <FaDatabase className="text-orange-500" />, name: "DynamoDB, PostgreSQL, MongoDB, MySQL" },
+      { icon: <Plug className="text-cyan-400" />, name: "WebSockets" },
+      { icon: <ShieldCheck className="text-green-400" />, name: "OAuth" },
     ]
   },
   {
     name: "Frontend Engineering",
     icon: <FaReact className="text-blue-400" />,
-    description: "Developing modern, responsive UIs with Next.js, React, Tailwind CSS, and TypeScript.",
+    description: "Building modern, responsive UIs with React, Next.js, and Tailwind CSS — including full ownership of frontend architecture on production applications.",
     skills: [
       { icon: <FaReact className="text-blue-400" />, name: "React" },
-      { icon: <SiTypescript className="text-blue-600" />, name: "TypeScript" },
       { icon: <RiTailwindCssFill className="text-blue-400" />, name: "Tailwind CSS" },
       { icon: <SiJavascript className="text-yellow-400" />, name: "JavaScript" },
-      { icon: <SiRedux className="text-purple-500" />, name: "Redux" },
-      { icon: <SiNestjs className="text-red-500" />, name: "Next.js" },
+      { icon: <FaReact className="text-blue-400" />, name: "Next.js" },
     ]
   },
   {
-    name: "SaaS & Automation",
-    icon: <FaDocker className="text-blue-400" />,
-    description: "Supported backend delivery using Docker, CI/CD pipelines, Infrastructure as Code, and managed platforms like Render.",
+    name: "Integrations & Payments",
+    icon: <SiStripe className="text-purple-400" />,
+    description: "Real production experience connecting business systems and processing payments — handling data sync across multiple external platforms and payment integration updates.",
     skills: [
-      { icon: <FaDocker className="text-blue-400" />, name: "Docker" },
-      { icon: <SiGithubactions className="text-gray-200" />, name: "CI/CD" },
-      { icon: <SiTerraform className="text-purple-400" />, name: "IaC" },
-      { icon: <SiPostgresql className="text-blue-500" />, name: "Render" },
-      { icon: <SiPostgresql className="text-blue-500" />, name: "Automation" },
+      { icon: <SiStripe className="text-purple-400" />, name: "Stripe (Payment Integration)" },
+      { icon: <SiHubspot className="text-orange-500" />, name: "HubSpot" },
+      { icon: <FaDatabase className="text-blue-400" />, name: "Third-Party System Integrations (Aspire, IFS)" },
     ]
   }
 ];
@@ -77,15 +76,16 @@ const skillIcons = [
   { icon: <FaReact className="text-blue-400" />, glow: 'bg-blue-400/80' },
   { icon: <FaNodeJs className="text-green-500" />, glow: 'bg-green-400/80' },
   { icon: <FaDocker className="text-blue-400" />, glow: 'bg-blue-300/80' },
-  { icon: <FaJava className="text-orange-500" />, glow: 'bg-orange-400/80' },
   { icon: <FaDatabase className="text-orange-500" />, glow: 'bg-orange-400/80' },
-  { icon: <SiTypescript className="text-blue-600" />, glow: 'bg-blue-500/80' },
   { icon: <SiPostgresql className="text-blue-500" />, glow: 'bg-blue-400/80' },
   { icon: <SiMongodb className="text-green-700" />, glow: 'bg-green-500/80' },
   { icon: <SiExpress className="text-gray-500" />, glow: 'bg-gray-400/80' },
   { icon: <SiGithubactions className="text-gray-200" />, glow: 'bg-gray-300/80' },
   { icon: <SiJavascript className="text-yellow-400" />, glow: 'bg-yellow-300/80' },
   { icon: <RiTailwindCssFill className="text-blue-400" />, glow: 'bg-blue-300/80' },
+  { icon: <SiStripe className="text-purple-400" />, glow: 'bg-purple-300/80' },
+  { icon: <SiHubspot className="text-orange-500" />, glow: 'bg-orange-400/80' },
+  { icon: <SiCloudflare className="text-orange-400" />, glow: 'bg-orange-300/80' },
 ];
 
 const Skills = () => {
