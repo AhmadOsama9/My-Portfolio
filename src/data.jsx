@@ -147,7 +147,7 @@ export const projects = [
       githubLink: "https://github.com/AhmadOsama9/nexwe3-agency-website"
     },
     {
-        title: 'TikTok-like Backend',
+        title: 'Video Platform Backend',
         images: [
           tiktokClone3,
           tiktokClone4,

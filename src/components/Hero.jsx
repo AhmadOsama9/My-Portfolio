@@ -165,15 +165,15 @@ def lambda_handler(event, context):
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <a href="#projects" className="group">
+            <a href="#experience" className="group">
               <button className="bg-primary-500 text-white px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg shadow-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 hover:bg-primary-600 hover:shadow-primary-500/20 hover:shadow-xl text-sm sm:text-base">
-                <span className="mr-2">View Projects</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              <span className="mr-2">My Experience</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
             </a>
             <a href="#contact">
               <button className="bg-transparent border-2 border-primary-500 text-primary-500 px-5 py-2.5 sm:px-6 sm:py-3 rounded-lg flex items-center justify-center w-full sm:w-auto transition-all duration-300 hover:bg-primary-500/10 text-sm sm:text-base">
-                <span>Contact Me</span>
+              <span>Contact Me</span>
               </button>
             </a>
           </motion.div>
@@ -185,12 +185,12 @@ def lambda_handler(event, context):
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="bg-neutral-800/50 p-1.5 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group flex flex-col items-center">
-                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">3+</p>
-                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Years Coding</p>
+                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">1.5+</p>
+                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Years Professional Experience</p>
               </div>
               <div className="bg-neutral-800/50 p-1.5 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group flex flex-col items-center">
-                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">7+</p>
-                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Projects Built</p>
+                <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">1</p>
+                <p className="text-neutral-400 text-[10px] sm:text-sm leading-tight">Live Production Platform</p>
               </div>
               <div className="bg-neutral-800/50 p-1.5 sm:p-4 rounded-lg backdrop-blur-sm border border-neutral-700/50 hover:border-primary-500/50 transition-all duration-300 group flex flex-col items-center">
                 <p className="text-primary-400 text-base sm:text-2xl font-bold group-hover:scale-110 transition-transform duration-300">10+</p>

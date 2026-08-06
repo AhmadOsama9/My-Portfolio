@@ -19,11 +19,14 @@ const About = () => {
               
               <div className="space-y-6 text-lg text-neutral-300 leading-relaxed font-light">
                 <p>
-                  I’m a backend engineer dedicated to building scalable, serverless systems on AWS. 
-                  I am an <strong className="text-primary-400 font-medium">AWS Certified Developer – Associate</strong> and a graduate of <span className="text-neutral-100">Cairo University (FCAI)</span>, where I honed my problem-solving skills and computer science fundamentals.
+                  I'm a backend engineer specializing in serverless AWS architectures and infrastructure-as-code. 
+                  I am an <strong className="text-primary-400 font-medium">AWS Certified Developer – Associate</strong> and a graduate of <span className="text-neutral-100">Cairo University (FCAI)</span>, where I built my foundation in computer science and problem-solving.
                 </p>
                 <p>
-                  My work centers on <span className="text-neutral-100">Python</span> and cloud-native architectures. I leverage services like Lambda, API Gateway, and S3, orchestrating them with <span className="text-neutral-100">Terraform</span> to ensure infrastructure is reproducible and robust. I thrive on the challenges of production environments—debugging complex issues and designing APIs that just work.
+                  My work centers on <span className="text-neutral-100">Python</span> and cloud-native architectures — Lambda, API Gateway, and S3, orchestrated with <span className="text-neutral-100">Terraform</span> for infrastructure that's reproducible and reliable. I've built and maintained production systems at scale, and solo-built a live donation platform end-to-end, from architecture through deployment.
+                </p>
+                <p>
+                  Outside of client work, I explore applied AI on my own — RAG, LLMs, and where this kind of work is heading — driven purely by curiosity rather than any assignment.
                 </p>
               </div>
             </motion.div>
@@ -41,7 +44,7 @@ const About = () => {
                   "Clean, Maintainable Code",
                   "Scalable System Design",
                   "Infrastructure as Automation",
-                  "Holistic Architecture"
+                  "Ownership End to End"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 bg-neutral-800/30 p-3 rounded-lg border border-neutral-800">
                     <div className="w-2 h-2 rounded-full bg-primary-500"></div>
@@ -59,7 +62,7 @@ const About = () => {
                 className="pt-6 border-t border-neutral-800"
               >
                 <p className="text-neutral-400 text-sm md:text-base">
-                  <span className="text-primary-400 font-semibold">// Full Stack Context:</span> While my heart is in the backend, I am proficient with <strong>React and Next.js</strong>. This frontend fluency allows me to collaborate seamlessly with UI teams and design backend APIs that are intuitive for consumers.
+                  <span className="text-primary-400 font-semibold">// Full Stack Context:</span> While my core is backend and cloud, I'm proficient with <strong>React and Next.js</strong>, and currently expanding into containerization and cloud-native deployment practices with Docker and Kubernetes.
                 </p>
               </motion.div>
         </div>
