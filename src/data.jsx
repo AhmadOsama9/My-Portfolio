@@ -109,7 +109,7 @@ export const projects = [
         milestones, and gamification elements. Built with React.js 
         and Tailwind CSS for a responsive, engaging user experience.`,
         date: 'August 2024 - October 2024',
-        githubLink: "https://github.com/AhmadOsama9/coding-sensai-frontend"
+        githubLink: "https://github.com/AhmadOsama9/coding-sensai-frontend/tree/main/frontend"
     },   
     {
         title: 'Education Platform Backend',
@@ -126,25 +126,24 @@ export const projects = [
         githubLink: "https://github.com/AhmadOsama9/coding-sensai-backend"
     },
     {
-      title: 'NexWe3 Agency Website',
-      images: [
-          nexwe3_1,
-          nexwe3_2,
-          nexwe3_3,
-          nexwe3_4,
-          nexwe3_5,
-          nexwe3_6,
-          nexwe3_7,
-          nexwe3_8,
-          nexwe3_9
-      ],
-      technologies: 'React, Vite, Tailwind CSS, Framer Motion, CSS',
-      description: `A modern, interactive website for NexWe3, a digital solutions agency specializing in custom software development, 
-      UI/UX design, and cloud infrastructure. Features include smooth animations with Framer Motion, responsive design, 
-      interactive service cards, and detailed case studies showcasing the agency's technical expertise and client success stories.
-      The site demonstrates both aesthetic design principles and technical implementation capabilities.`,
-      date: 'November 2024 - December 2024',
-      githubLink: "https://github.com/AhmadOsama9/nexwe3-agency-website"
+        title: 'NexWe3 — Digital Agency Concept',
+        images: [
+            nexwe3_1,
+            nexwe3_2,
+            nexwe3_3,
+            nexwe3_4,
+            nexwe3_5,
+            nexwe3_6,
+            nexwe3_7,
+            nexwe3_8,
+            nexwe3_9
+        ],
+        technologies: 'React, Vite, Tailwind CSS, Framer Motion, CSS',
+        description: `A modern, interactive concept website for NexWe3, a fictional digital solutions agency. Features 
+        smooth animations with Framer Motion, responsive design, interactive service cards, and detailed feature 
+        breakdowns — demonstrating both aesthetic design principles and technical implementation capabilities.`,
+        date: 'November 2024 - December 2024',
+        liveLink: "https://nexwe3.ahmedosamaa975.workers.dev/"
     },
     {
         title: 'Video Platform Backend',

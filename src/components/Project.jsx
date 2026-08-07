@@ -257,12 +257,24 @@ const Projects = () => {
                       Project Links
                     </h4>
                     <div className="grid grid-cols-1 gap-4">
+                      {selectedProject.liveLink && (
+                        <a
+                          href={selectedProject.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 py-3 border-2 border-primary-500 text-primary-400 hover:bg-primary-500 hover:text-white rounded-lg transition-all duration-300 group"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                          <span>View Live Site</span>
+                        </a>
+                      )}
                       {selectedProject.githubLink && (
                         <a
                           href={selectedProject.githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 py-3 bg-neutral-600 hover:bg-neutral-500 rounded-lg transition-colors"
+                          className="flex items-center justify-center gap-2 py-3 border-2 border-neutral-600 text-neutral-300 hover:border-primary-500 hover:text-primary-400 rounded-lg transition-colors"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <Github className="w-4 h-4" />
