@@ -20,20 +20,20 @@ const experienceGroups = [
     accent: "border-cyan-400",
     iconBg: "bg-cyan-400/10"
   },
-  {
-    id: 2,
-    icon: <Code2 className="w-12 h-12 text-fuchsia-400" />,
-    title: "Full-Stack Freelance Developer",
-    subtitle: "waqfalaqsa.org",
-    period: "2025 – 2026",
-    description: "Solely designed and built a live production donation platform end-to-end — frontend, backend, and infrastructure — including multi-currency support and a secured admin panel.",
-    technologies: [
-      "Next.js", "AWS Lambda", "DynamoDB", "Cloudflare"
-    ],
-    color: "from-fuchsia-400/20 to-fuchsia-700/5",
-    accent: "border-fuchsia-400",
-    iconBg: "bg-fuchsia-400/10"
-  }
+  // {
+  //   id: 2,
+  //   icon: <Code2 className="w-12 h-12 text-fuchsia-400" />,
+  //   title: "Full-Stack Freelance Developer",
+  //   subtitle: "waqfalaqsa.org",
+  //   period: "2025 – 2026",
+  //   description: "Solely designed and built a live production donation platform end-to-end — frontend, backend, and infrastructure — including multi-currency support and a secured admin panel.",
+  //   technologies: [
+  //     "Next.js", "AWS Lambda", "DynamoDB", "Cloudflare"
+  //   ],
+  //   color: "from-fuchsia-400/20 to-fuchsia-700/5",
+  //   accent: "border-fuchsia-400",
+  //   iconBg: "bg-fuchsia-400/10"
+  // }
 ];
 
 // Animation variants
